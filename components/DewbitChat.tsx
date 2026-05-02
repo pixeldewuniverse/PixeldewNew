@@ -141,7 +141,11 @@ export default function DewbitChat() {
         body: JSON.stringify({ messages: next }),
       });
 
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        const detail = errData?.detail?.error?.message || errData?.detail?.raw || "";
+        throw new Error(`HTTP ${res.status}${detail ? ": " + detail : ""}`);
+      }
 
       const data = await res.json();
       const reply: Message = {
