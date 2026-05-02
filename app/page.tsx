@@ -142,7 +142,6 @@ export default function Home() {
 
       <Footer />
       <DewbitChat />
-      <DewbitChat />
     </main>
   );
 }
