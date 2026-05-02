@@ -25,13 +25,9 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      return NextResponse.json(
-        { error: "API key not configured" },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: "API key not configured" }, { status: 500 });
     }
 
-    // Convert messages to Gemini format (uses "model" instead of "assistant")
     const geminiContents = messages.map((m: { role: string; content: string }) => ({
       role: m.role === "assistant" ? "model" : "user",
       parts: [{ text: m.content }],
@@ -43,14 +39,9 @@ export async function POST(req: NextRequest) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          system_instruction: {
-            parts: [{ text: SYSTEM_PROMPT }],
-          },
+          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
           contents: geminiContents,
-          generationConfig: {
-            maxOutputTokens: 1024,
-            temperature: 0.9,
-          },
+          generationConfig: { maxOutputTokens: 1024, temperature: 0.9 },
         }),
       }
     );
@@ -67,9 +58,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    const text =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ??
-      "🌱 ...bits scattered. Try again?";
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "🌱 ...bits scattered. Try again?";
 
     return NextResponse.json({ text });
   } catch (err) {
