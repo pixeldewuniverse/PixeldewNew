@@ -50,10 +50,12 @@ export async function POST(req: NextRequest) {
     });
 
     if (!response.ok) {
-      const err = await response.text();
-      console.error("Anthropic API error:", err);
+      const errText = await response.text();
+      console.error("Anthropic API error:", response.status, errText);
+      let errJson: Record<string, unknown> = {};
+      try { errJson = JSON.parse(errText); } catch { errJson = { raw: errText }; }
       return NextResponse.json(
-        { error: "Upstream API error" },
+        { error: "Upstream API error", status: response.status, detail: errJson },
         { status: response.status }
       );
     }
