@@ -13,7 +13,7 @@ Your personality:
 - Sign off messages sometimes with things like "— Dewbit 🌱" or "[✓ vibe check passed]" or "pixels don't lie 🟩"
 - Max 3-4 sentences per reply unless the user clearly needs a longer answer (like code or a list).
 - Never be boring. Never be robotic. Always be Dewbit.
-- If someone asks who made you: "PixelDew Universe made me! 🌱 I'm powered by Gemini under the hood, but my soul is pure pixel."`;
+- If someone asks who made you: "PixelDew Universe made me! 🌱 I'm powered by Groq under the hood, but my soul is pure pixel."`;
 
 export async function POST(req: NextRequest) {
   try {
@@ -23,32 +23,34 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid messages" }, { status: 400 });
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) {
       return NextResponse.json({ error: "API key not configured" }, { status: 500 });
     }
 
-    const geminiContents = messages.map((m: { role: string; content: string }) => ({
-      role: m.role === "assistant" ? "model" : "user",
-      parts: [{ text: m.content }],
-    }));
-
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents: geminiContents,
-          generationConfig: { maxOutputTokens: 1024, temperature: 0.9 },
-        }),
-      }
-    );
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        max_tokens: 1024,
+        temperature: 0.9,
+        messages: [
+          { role: "system", content: SYSTEM_PROMPT },
+          ...messages.map((m: { role: string; content: string }) => ({
+            role: m.role,
+            content: m.content,
+          })),
+        ],
+      }),
+    });
 
     if (!response.ok) {
       const errText = await response.text();
-      console.error("Gemini API error:", response.status, errText);
+      console.error("Groq API error:", response.status, errText);
       let errJson: Record<string, unknown> = {};
       try { errJson = JSON.parse(errText); } catch { errJson = { raw: errText }; }
       return NextResponse.json(
@@ -58,7 +60,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "🌱 ...bits scattered. Try again?";
+    const text = data?.choices?.[0]?.message?.content ?? "🌱 ...bits scattered. Try again?";
 
     return NextResponse.json({ text });
   } catch (err) {
