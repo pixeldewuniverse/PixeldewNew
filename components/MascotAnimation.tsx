@@ -216,13 +216,12 @@ export default function MascotAnimation() {
           }}
         >
           <Image
-            src="/dewbit.png"
+            src="/pixa.png"
             alt="Pixa mascot"
             fill
             style={{
               objectFit: "contain",
-              objectPosition: "right center",
-              filter: "hue-rotate(300deg) saturate(1.3)",
+              objectPosition: "center",
             }}
             priority
           />
