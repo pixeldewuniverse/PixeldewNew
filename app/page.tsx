@@ -4,6 +4,7 @@ import FloatingBits from "@/components/FloatingBits";
 import CodePanel from "@/components/CodePanel";
 import PortfolioSection from "@/components/PortfolioSection";
 import ParticleField from "@/components/ParticleField";
+import MascotAnimation from "@/components/MascotAnimation";
 import DewbitChat from "@/components/DewbitChat";
 import Footer from "@/components/Footer";
 
@@ -30,6 +31,8 @@ export default function Home() {
       />
 
       <CodePanel />
+
+      <MascotAnimation />
 
       <PortfolioSection />
 
