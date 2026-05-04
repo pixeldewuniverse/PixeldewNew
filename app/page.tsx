@@ -7,12 +7,14 @@ import ParticleField from "@/components/ParticleField";
 import MascotAnimation from "@/components/MascotAnimation";
 import DewbitChat from "@/components/DewbitChat";
 import Footer from "@/components/Footer";
+import GeneratorBanner from "@/components/GeneratorBanner";
 
 export default function Home() {
   return (
     <main className="min-h-screen relative" style={{ background: "#12002B" }}>
       <ParticleField />
       <Navbar />
+      <GeneratorBanner />
 
       {/* Hero section with floating bits overlay */}
       <div className="relative">
@@ -148,41 +150,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ padding: "60px 20px", textAlign: "center", position: "relative", zIndex: 1 }}>
-        <div style={{
-          maxWidth: 560, margin: "0 auto",
-          border: "1px solid rgba(44,255,143,0.2)",
-          background: "rgba(44,255,143,0.03)",
-          padding: "40px 32px",
-        }}>
-          <div className="font-pixel" style={{
-            fontSize: "clamp(9px, 2vw, 13px)", color: "#2CFF8F",
-            letterSpacing: "0.15em", marginBottom: 12,
-            textShadow: "0 0 20px #2CFF8F55",
-          }}>
-            ✦ AI Website Generator ✦
-          </div>
-          <p style={{ fontSize: 13, color: "rgba(232,224,255,0.5)", marginBottom: 28, lineHeight: 1.7 }}>
-            Describe your dream site. Dewbit builds it in seconds.
-          </p>
-          <a
-            href="/generate"
-            className="font-pixel"
-            style={{
-              display: "inline-block",
-              background: "rgba(44,255,143,0.1)",
-              border: "1px solid #2CFF8F",
-              color: "#2CFF8F",
-              fontSize: "9px", padding: "12px 28px",
-              textDecoration: "none",
-              letterSpacing: "0.15em",
-              boxShadow: "0 0 24px rgba(44,255,143,0.15)",
-            }}
-          >
-            TRY GENERATOR →
-          </a>
-        </div>
-      </section>
 
       <Footer />
       <DewbitChat />
