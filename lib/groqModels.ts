@@ -2,10 +2,10 @@ export interface GroqModel {
   id: string;
   name: string;
   emoji: string;
-  speedRating: number; // 1-3, higher = faster
-  capabilityRating: number; // 1-3, higher = more capable
   description: string;
-  contextWindow: string;
+  speedRating: number; // 1-3 stars
+  capabilityRating: number; // 1-3 stars
+  contextWindow: number;
 }
 
 export const GROQ_MODELS: Record<string, GroqModel> = {
@@ -13,49 +13,39 @@ export const GROQ_MODELS: Record<string, GroqModel> = {
     id: "llama-3.3-70b-versatile",
     name: "Llama 3.3 70B",
     emoji: "🦙",
+    description: "Most capable model. Best for complex tasks, reasoning, and detailed responses.",
     speedRating: 2,
     capabilityRating: 3,
-    description: "Most capable and versatile. Best for complex tasks, coding, and detailed analysis.",
-    contextWindow: "8K tokens",
+    contextWindow: 8192,
   },
   "mixtral-8x7b-32768": {
     id: "mixtral-8x7b-32768",
-    name: "Mixtral 8x7B",
     emoji: "🎯",
+    name: "Mixtral 8x7B",
+    description: "Balanced speed & capability. Great for general use and quick responses.",
     speedRating: 3,
     capabilityRating: 2,
-    description: "Fast and efficient. Great balance of speed and quality for most tasks.",
-    contextWindow: "32K tokens",
+    contextWindow: 32768,
   },
   "gemma2-9b-it": {
     id: "gemma2-9b-it",
-    name: "Gemma 2 9B",
     emoji: "✨",
+    name: "Gemma 2 9B",
+    description: "Fastest model. Best for real-time chat and quick interactions.",
     speedRating: 3,
     capabilityRating: 2,
-    description: "Super fast and lightweight. Perfect for quick responses and real-time chat.",
-    contextWindow: "8K tokens",
+    contextWindow: 8192,
   },
 };
 
-export const MODEL_ORDER = [
-  "llama-3.3-70b-versatile",
-  "mixtral-8x7b-32768",
-  "gemma2-9b-it",
-];
+export const DEFAULT_MODEL = "llama-3.3-70b-versatile";
 
-/**
- * Get model display name with emoji
- */
 export function getModelDisplay(modelId: string): string {
   const model = GROQ_MODELS[modelId];
-  if (!model) return modelId;
-  return `${model.emoji} ${model.name}`;
+  return model ? `${model.emoji} ${model.name}` : modelId;
 }
 
-/**
- * Get model info
- */
-export function getModelInfo(modelId: string): GroqModel | null {
-  return GROQ_MODELS[modelId] || null;
+export function getModelDescription(modelId: string): string {
+  const model = GROQ_MODELS[modelId];
+  return model?.description || "Unknown model";
 }
