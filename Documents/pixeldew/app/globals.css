@@ -139,3 +139,39 @@ section { padding: 120px clamp(24px, 8vw, 160px); position: relative; }
 
 @keyframes tw-blink{0%,100%{opacity:1}50%{opacity:0}}
 @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+  section {
+    padding: 80px clamp(20px, 6vw, 40px);
+  }
+  .sec-label {
+    margin-bottom: 48px;
+  }
+  /* About grid → single col */
+  #about > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+  /* Skills grid already auto-fit */
+  /* Work grid already auto-fit */
+  /* Contact CTA smaller */
+  #contact h2 {
+    font-size: clamp(26px, 7vw, 40px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .t-display {
+    font-size: clamp(38px, 12vw, 64px) !important;
+  }
+  .t-heading {
+    font-size: clamp(24px, 8vw, 36px) !important;
+  }
+  .t-sub {
+    font-size: clamp(14px, 4vw, 18px) !important;
+  }
+  /* Navbar badge text — hide on very small */
+  .avail-text {
+    display: none;
+  }
+}
