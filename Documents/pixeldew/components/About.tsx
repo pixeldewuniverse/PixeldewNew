@@ -24,7 +24,7 @@ export default function About() {
         <span className="t-label" style={{ color: "rgba(29,221,120,0.4)" }}>01 — About</span>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px, 8vw, 120px)", alignItems: "start", maxWidth: "1000px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: "clamp(40px, 8vw, 120px)", alignItems: "start", maxWidth: "1000px" }}>
 
         {/* Left */}
         <div>
