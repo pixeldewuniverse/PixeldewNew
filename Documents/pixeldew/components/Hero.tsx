@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
-const PixelCube = dynamic(() => import("./Pixelcube"), { ssr: false });
+const PixelCube = dynamic(() => import("./PixelCube"), { ssr: false });
 
 const ROLES = ["UI/UX Designer", "Frontend Developer", "Brand Creator", "Web Craftsman"];
 
@@ -70,14 +70,14 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Two-column */}
+      {/* Layout — 2 col desktop, 1 col mobile */}
       <div
         style={{
           position: "relative",
           zIndex: 1,
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "clamp(32px, 6vw, 80px)",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))",
+          gap: "clamp(48px, 6vw, 80px)",
           alignItems: "center",
           width: "100%",
         }}
@@ -88,7 +88,7 @@ export default function Hero() {
             className="t-label"
             style={{
               color: "rgba(29,221,120,0.45)",
-              marginBottom: "48px",
+              marginBottom: "40px",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(18px)",
               transition: `opacity 0.7s ${ease}, transform 0.7s ${ease}`,
@@ -97,7 +97,7 @@ export default function Hero() {
             00 — Portfolio
           </div>
 
-          <div style={{ overflow: "hidden", marginBottom: "20px" }}>
+          <div style={{ overflow: "hidden", marginBottom: "16px" }}>
             <h1
               className="t-display glow-mint"
               style={{
@@ -115,20 +115,20 @@ export default function Hero() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "18px",
-              marginBottom: "40px",
+              gap: "16px",
+              marginBottom: "32px",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(14px)",
               transition: `opacity 0.7s ${ease} 0.3s, transform 0.7s ${ease} 0.3s`,
             }}
           >
-            <div style={{ width: "44px", height: "1px", background: "var(--cyan)", flexShrink: 0 }} />
+            <div style={{ width: "40px", height: "1px", background: "var(--cyan)", flexShrink: 0 }} />
             <span className="t-label" style={{ color: "var(--cyan)" }}>Web Creator</span>
           </div>
 
           <div
             style={{
-              marginBottom: "32px",
+              marginBottom: "24px",
               minHeight: "1.6em",
               opacity: visible ? 1 : 0,
               transition: `opacity 0.7s ${ease} 0.42s`,
@@ -144,8 +144,8 @@ export default function Hero() {
             className="t-body"
             style={{
               color: "var(--text-muted)",
-              maxWidth: "400px",
-              marginBottom: "52px",
+              maxWidth: "420px",
+              marginBottom: "48px",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(14px)",
               transition: `opacity 0.7s ${ease} 0.52s, transform 0.7s ${ease} 0.52s`,
@@ -155,13 +155,12 @@ export default function Hero() {
             dari piksel pertama sampai interaksi terakhir.
           </p>
 
-          {/* Scroll hint inline */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
               gap: "12px",
-              opacity: visible ? 0.35 : 0,
+              opacity: visible ? 0.32 : 0,
               transition: `opacity 0.7s ${ease} 0.8s`,
             }}
           >
@@ -170,22 +169,22 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — 3D cube */}
+        {/* Right — 3D cube, hidden on small screens */}
         <div
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "scale(1)" : "scale(0.92)",
             transition: `opacity 1s ${ease} 0.4s, transform 1s ${ease} 0.4s`,
             position: "relative",
+            minHeight: "380px",
           }}
         >
-          {/* Glow backdrop */}
           <div
             aria-hidden="true"
             style={{
               position: "absolute",
               inset: 0,
-              background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(29,221,120,0.07) 0%, transparent 70%)",
+              background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(29,221,120,0.06) 0%, transparent 70%)",
               pointerEvents: "none",
               zIndex: 0,
             }}
@@ -197,6 +196,11 @@ export default function Hero() {
       <style>{`
         @keyframes tw-blink  { 0%,100%{opacity:1} 50%{opacity:0} }
         @keyframes heroFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+        /* Mobile — sembunyikan cube, full width text */
+        @media (max-width: 640px) {
+          #hero-cube { display: none !important; }
+        }
       `}</style>
     </section>
   );
