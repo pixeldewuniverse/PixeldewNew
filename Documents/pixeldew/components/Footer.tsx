@@ -1,3 +1,5 @@
+import PixelDewLogo from "./PixelDewLogo";
+
 export default function Footer() {
   return (
     <footer
@@ -11,16 +13,7 @@ export default function Footer() {
         gap: "12px",
       }}
     >
-      <span
-        style={{
-          fontFamily: '"Press Start 2P", monospace',
-          fontSize: "10px",
-          color: "var(--mint)",
-          textShadow: "0 0 10px rgba(29,221,120,0.4)",
-        }}
-      >
-        PixelDew
-      </span>
+      <PixelDewLogo size={28} showText={true} />
       <span style={{ fontSize: "12px", color: "var(--text-muted)" }}>
         © {new Date().getFullYear()} · built pixel by pixel
       </span>
