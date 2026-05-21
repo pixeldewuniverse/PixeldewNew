@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
-const PixelCube = dynamic(() => import("./PixelCube"), { ssr: false });
+const PixelCube = dynamic(() => import("./Pixelcube"), { ssr: false });
 
 const ROLES = ["UI/UX Designer", "Frontend Developer", "Brand Creator", "Web Craftsman"];
 
