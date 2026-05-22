@@ -130,23 +130,13 @@ function ProjectCard({ project, index, visible }: { project: typeof PROJECTS[0];
         style={{
           height: "200px",
           background: `linear-gradient(135deg, rgba(255,255,255,0.025) 0%, ${project.glow} 100%)`,
-          border: `1px solid ${project.color}22`,
-          borderBottom: "none",
-          position: "relative",
-          overflow: "hidden",
-          transition: "border-color 0.3s",
-          borderTopLeftRadius: "2px",
-          borderTopRightRadius: "2px",
-        }}
-        style={{
-          ...(hovered ? { borderColor: `${project.color}44` } : {}),
-          height: "200px",
-          background: `linear-gradient(135deg, rgba(255,255,255,0.025) 0%, ${project.glow} 100%)`,
           border: `1px solid ${hovered ? project.color + "44" : project.color + "22"}`,
           borderBottom: "none",
           position: "relative" as const,
           overflow: "hidden" as const,
           transition: "border-color 0.3s",
+          borderTopLeftRadius: "2px",
+          borderTopRightRadius: "2px",
         }}
       >
         {/* Window chrome */}
