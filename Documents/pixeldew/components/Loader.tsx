@@ -183,6 +183,7 @@ export default function Loader() {
         position: "fixed",
         inset: 0,
         zIndex: 99999,
+        cursor: "default",
         background: "#080012",
         display: "flex",
         alignItems: "center",
@@ -192,6 +193,7 @@ export default function Loader() {
         transition: "opacity 0.65s cubic-bezier(0.215,0.61,0.355,1)",
         pointerEvents: done ? "none" : "all",
       }}
+      id="loader-wrap"
     >
       {/* Video */}
       <video
@@ -202,8 +204,8 @@ export default function Loader() {
         muted
         onEnded={onVideoEnded}
         style={{
-          maxWidth: "100%",
-          maxHeight: "100%",
+          maxWidth: "50%",
+          maxHeight: "50%",
           width: "auto",
           height: "auto",
           objectFit: "contain",
@@ -218,7 +220,7 @@ export default function Loader() {
           style={{
             background: "none",
             border: "none",
-            cursor: "none",
+            cursor: "pointer",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -254,6 +256,9 @@ export default function Loader() {
       )}
 
       <style>{`
+        #loader-wrap { cursor: default !important; }
+        #loader-wrap button { cursor: pointer !important; }
+        body:has(#loader-wrap) #cursor-dot, body:has(#loader-wrap) #cursor-ring { display: none !important; }
         @keyframes tapPulse {
           0%,100% { opacity: 0.6; transform: scale(1); }
           50%      { opacity: 1;   transform: scale(1.06); }
