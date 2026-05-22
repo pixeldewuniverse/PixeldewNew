@@ -7,6 +7,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import DewbitChat from "@/components/DewbitChat";
 import Loader from "@/components/Loader";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Contact />
       <Footer />
       <DewbitChat />
+      <BackgroundMusic />
     </main>
   );
 }
