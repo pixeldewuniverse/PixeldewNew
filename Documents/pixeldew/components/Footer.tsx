@@ -4,8 +4,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        padding: "32px clamp(24px, 8vw, 160px)",
-        borderTop: "1px solid rgba(240,234,255,0.06)",
+        padding: "32px clamp(24px, 8vw, 96px)",
+        borderTop: "1px solid var(--border)",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -13,8 +13,8 @@ export default function Footer() {
         gap: "12px",
       }}
     >
-      <PixelDewLogo size={28} showText={true} />
-      <span style={{ fontSize: "12px", color: "var(--text-muted)" }}>
+      <PixelDewLogo size={28} showText />
+      <span className="t-small" style={{ color: "var(--text-muted)" }}>
         © {new Date().getFullYear()} · built pixel by pixel
       </span>
     </footer>
