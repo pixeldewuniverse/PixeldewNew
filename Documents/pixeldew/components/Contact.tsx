@@ -23,58 +23,51 @@ export default function Contact() {
         <span className="t-label" style={{ color: "rgba(74,122,255,0.4)" }}>04 — Contact</span>
       </div>
 
-      {/* Big CTA heading */}
-      <div style={{ marginBottom: "56px" }}>
-        <h2 className={`t-heading reveal ${vis ? "in" : ""}`} style={{ color: "var(--text)", lineHeight: 1.05, marginBottom: "8px" }}>
+      {/* Glass card CTA */}
+      <div
+        className={`glass-card-elevated reveal ${vis ? "in" : ""}`}
+        style={{
+          padding: "clamp(40px, 6vw, 80px)",
+          maxWidth: "800px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* BG glow */}
+        <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(74,122,255,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
+
+        <p className={`t-label reveal d1 ${vis ? "in" : ""}`} style={{ color: "rgba(29,221,120,0.45)", marginBottom: "24px", fontSize: "7px" }}>
+          Let&apos;s build something
+        </p>
+
+        <h2 className={`t-h1 reveal d1 ${vis ? "in" : ""}`} style={{ color: "var(--text)", marginBottom: "12px" }}>
           Punya project?
         </h2>
-        <h2 className={`t-heading shimmer reveal d1 ${vis ? "in" : ""}`}>
+        <h2 className={`t-h1 shimmer reveal d2 ${vis ? "in" : ""}`} style={{ marginBottom: "32px" }}>
           Aku siap.
         </h2>
-      </div>
 
-      <p className={`t-body reveal d2 ${vis ? "in" : ""}`} style={{ color: "var(--text-muted)", maxWidth: "420px", marginBottom: "52px" }}>
-        Atau tanya langsung ke{" "}
-        <span style={{ color: "var(--mint)" }}>Dewbit</span> di pojok kanan bawah —
-        dia tahu semua tentang PixelDew dan bisa bantu kamu mulai.
-      </p>
+        <p className={`t-body-lg reveal d2 ${vis ? "in" : ""}`} style={{ color: "var(--text-muted)", maxWidth: "400px", marginBottom: "48px" }}>
+          Atau tanya langsung ke{" "}
+          <span style={{ color: "var(--mint)" }}>Dewbit</span> di pojok kanan bawah.
+        </p>
 
-      {/* Links */}
-      <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-        {LINKS.map((l, i) => (
-          <a
-            key={l.label}
-            href={l.href}
-            target={l.href.startsWith("http") ? "_blank" : undefined}
-            rel="noopener noreferrer"
-            className={`reveal d${i + 1} ${vis ? "in" : ""}`}
-            style={{
-              fontSize: "13px",
-              fontWeight: 500,
-              color: l.color,
-              padding: "12px 24px",
-              border: `1px solid ${l.hex}28`,
-              letterSpacing: "0.02em",
-              transition: "all 0.22s",
-              display: "inline-block",
-              cursor: "none",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.background = `${l.hex}08`;
-              el.style.boxShadow = `0 0 20px ${l.hex}22`;
-              el.style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.background = "transparent";
-              el.style.boxShadow = "none";
-              el.style.transform = "translateY(0)";
-            }}
-          >
-            {l.label}
-          </a>
-        ))}
+        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+          {LINKS.map((l, i) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target={l.href.startsWith("http") ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              className={`btn btn-border reveal d${i + 2} ${vis ? "in" : ""}`}
+              style={{ color: l.color, borderColor: `${l.hex}28`, cursor: "none" }}
+              onMouseEnter={(e) => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = `${l.hex}55`; el.style.background = `${l.hex}08`; el.style.boxShadow = `0 0 16px ${l.hex}18`; }}
+              onMouseLeave={(e) => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = `${l.hex}28`; el.style.background = "transparent"; el.style.boxShadow = "none"; }}
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
