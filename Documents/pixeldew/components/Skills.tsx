@@ -3,9 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const GROUPS = [
   {
-    label: "Design",
-    color: "var(--mint)",
-    hex: "#1ddd78",
+    label: "Design", color: "var(--mint)", hex: "#1ddd78",
     skills: [
       { name: "UI/UX Design",   pct: 90 },
       { name: "Figma",          pct: 88 },
@@ -14,9 +12,7 @@ const GROUPS = [
     ],
   },
   {
-    label: "Frontend",
-    color: "var(--cyan)",
-    hex: "#0ecfdf",
+    label: "Frontend", color: "var(--cyan)", hex: "#0ecfdf",
     skills: [
       { name: "React / Next.js", pct: 85 },
       { name: "TypeScript",      pct: 78 },
@@ -42,45 +38,31 @@ export default function Skills() {
         <span className="t-label" style={{ color: "rgba(14,207,223,0.4)" }}>02 — Skills</span>
       </div>
 
-      <h2 className={`t-heading reveal ${vis ? "in" : ""}`} style={{ color: "var(--text)", marginBottom: "72px" }}>
+      <h2 className={`t-h2 reveal ${vis ? "in" : ""}`} style={{ color: "var(--text)", marginBottom: "64px" }}>
         What I <span className="shimmer">do best.</span>
       </h2>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px,1fr))", gap: "24px", maxWidth: "900px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "20px" }}>
         {GROUPS.map((g, gi) => (
           <div
             key={g.label}
-            className={`card reveal d${gi + 1} ${vis ? "in" : ""}`}
-            style={{ padding: "36px 32px", border: `1px solid ${g.hex}14` }}
+            className={`glass-card reveal d${gi + 1} ${vis ? "in" : ""}`}
+            style={{ padding: "36px 32px" }}
           >
             <div
-              style={{
-                fontSize: "11px",
-                fontWeight: 600,
-                color: g.color,
-                textShadow: `0 0 10px ${g.hex}44`,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                marginBottom: "32px",
-              }}
+              className="t-body-lg"
+              style={{ color: g.color, fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: "32px", textShadow: `0 0 10px ${g.hex}44` }}
             >
               {g.label}
             </div>
             {g.skills.map((s) => (
               <div key={s.name} style={{ marginBottom: "20px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-                  <span className="t-small" style={{ color: "var(--text-dim)" }}>{s.name}</span>
-                  <span style={{ fontSize: "11px", fontWeight: 600, color: g.color }}>{s.pct}</span>
+                  <span className="t-body" style={{ color: "var(--text-dim)" }}>{s.name}</span>
+                  <span className="t-body" style={{ color: g.color, fontWeight: 600 }}>{s.pct}</span>
                 </div>
                 <div className="skill-track">
-                  <div
-                    className={`skill-fill ${vis ? "go" : ""}`}
-                    style={{
-                      width: `${s.pct}%`,
-                      background: `linear-gradient(to right, ${g.hex}66, ${g.hex})`,
-                      boxShadow: `0 0 6px ${g.hex}55`,
-                    }}
-                  />
+                  <div className={`skill-fill ${vis ? "go" : ""}`} style={{ width: `${s.pct}%`, background: `linear-gradient(to right, ${g.hex}66, ${g.hex})`, boxShadow: `0 0 6px ${g.hex}55` }} />
                 </div>
               </div>
             ))}
