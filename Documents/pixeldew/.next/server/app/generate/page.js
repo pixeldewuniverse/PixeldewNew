@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/generate/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0h8mlkv._.js")
+R.c("server/chunks/ssr/0d8k_next_dist_esm_build_templates_app-page_0z1c526.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0kzkdmn._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__08-xx4o._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0~4fxmp._.js")
+R.c("server/chunks/ssr/0d8k_next_dist_client_components_0xvxjxf._.js")
+R.c("server/chunks/ssr/0d8k_next_dist_client_components_builtin_forbidden_0wiqnhs.js")
+R.c("server/chunks/ssr/0d8k_next_dist_client_components_builtin_unauthorized_014jzxk.js")
+R.c("server/chunks/ssr/0d8k_next_dist_client_components_builtin_global-error_0h3g~_y.js")
+R.c("server/chunks/ssr/0~8y_Documents_pixeldew__next-internal_server_app_generate_page_actions_0whkkgz.js")
+R.m(73229)
+module.exports=R.m(73229).exports

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import type * as THREE from "three";
 
 interface HeroSceneProps {
   scrollProgress: number;
@@ -243,7 +244,7 @@ export default function HeroScene({ scrollProgress, isMobile }: HeroSceneProps) 
         });
 
         // Particle movement toward camera
-        const posAttr = ptGeo.getAttribute("position") as THREE.BufferAttribute;
+        const posAttr = ptGeo.getAttribute("position") as any;
         for (let i = 0; i < ptCount; i++) {
           posAttr.array[i * 3 + 2] = initialZ[i] + progress * 2;
         }
