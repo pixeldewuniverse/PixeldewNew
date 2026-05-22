@@ -4,5 +4,10 @@
   "/api/chat/route": "/api/chat",
   "/api/generate/route": "/api/generate",
   "/generate/page": "/generate",
-  "/page": "/"
+  "/opengraph-image/route": "/opengraph-image",
+  "/page": "/",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/work/[slug]/page": "/work/[slug]",
+  "/work/page": "/work"
 }
