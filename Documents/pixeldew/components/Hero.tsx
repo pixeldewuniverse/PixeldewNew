@@ -1,199 +1,199 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
-const PixelCube = dynamic(() => import("./Pixelcube"), { ssr: false });
-
-const ROLES = ["UI/UX Designer", "Frontend Developer", "Brand Creator", "Web Craftsman"];
-
-const BITS = [
-  { ch: "01", x: "6%",  y: "18%", cls: "float-1", color: "rgba(29,221,120,0.18)",  size: "8px"  },
-  { ch: "◈",  x: "12%", y: "70%", cls: "float-2", color: "rgba(14,207,223,0.14)",  size: "11px" },
-  { ch: "px", x: "84%", y: "16%", cls: "float-3", color: "rgba(74,122,255,0.22)",   size: "7px"  },
-  { ch: "∆",  x: "90%", y: "64%", cls: "float-4", color: "rgba(224,44,184,0.18)",   size: "12px" },
-];
+const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 export default function Hero() {
-  const [roleIdx, setRoleIdx]     = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [visible, setVisible]     = useState(false);
-  const ease = "cubic-bezier(0.215,0.61,0.355,1)";
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const heroZoneRef = useRef<HTMLDivElement>(null);
+  const [flashOpacity, setFlashOpacity] = useState(0);
+  const [heroUIOpacity, setHeroUIOpacity] = useState(1);
+  const [sceneOpacity, setSceneOpacity] = useState(1);
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 100);
-    return () => clearTimeout(t);
+    // Check mobile on mount
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    // Scroll handler
+    const handleScroll = () => {
+      const heroZone = heroZoneRef.current;
+      if (!heroZone) return;
+
+      const rect = heroZone.getBoundingClientRect();
+      const heroHeight = heroZone.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      // Progress from 0 to 1 as user scrolls through hero zone
+      const progress = Math.max(
+        0,
+        Math.min(1, (heroHeight + rect.top) / (heroHeight + viewportHeight))
+      );
+      setScrollProgress(progress);
+
+      // Flash opacity: ramp up at 0.82, ramp down at 0.88
+      let flash = 0;
+      if (progress > 0.82 && progress < 0.88) {
+        const p = (progress - 0.82) / 0.06;
+        flash = p > 0.5 ? (1 - p) * 2 : p * 2;
+        flash = Math.min(0.8, flash);
+      }
+      setFlashOpacity(flash);
+
+      // Fade out hero UI content
+      if (progress > 0.3) {
+        setHeroUIOpacity(Math.max(0, 1 - (progress - 0.3) / 0.3));
+      }
+
+      // Fade out scene at end
+      if (progress > 0.9) {
+        setSceneOpacity(Math.max(0, 1 - (progress - 0.9) / 0.1));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial call
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  useEffect(() => {
-    const target = ROLES[roleIdx];
-    let i = 0, deleting = false;
-    let t: ReturnType<typeof setTimeout>;
-    function tick() {
-      if (!deleting) {
-        setDisplayed(target.slice(0, i + 1));
-        i++;
-        if (i === target.length) { deleting = true; t = setTimeout(tick, 1800); return; }
-      } else {
-        setDisplayed(target.slice(0, i - 1));
-        i--;
-        if (i === 0) { deleting = false; setRoleIdx((n) => (n + 1) % ROLES.length); return; }
-      }
-      t = setTimeout(tick, deleting ? 32 : 60);
-    }
-    t = setTimeout(tick, 80);
-    return () => clearTimeout(t);
-  }, [roleIdx]);
-
   return (
-    <section
-      id="hero"
+    <div
+      ref={heroZoneRef}
+      className="hero-scroll-zone"
       style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        padding: "80px clamp(24px, 8vw, 96px)",
+        height: isMobile ? "100vh" : "300vh",
         position: "relative",
-        overflow: "hidden",
-        background:
-          "radial-gradient(ellipse 100% 80% at 50% 0%, rgba(74,122,255,0.07) 0%, transparent 60%)," +
-          "radial-gradient(ellipse 50% 60% at 0% 70%, rgba(29,221,120,0.04) 0%, transparent 55%)," +
-          "radial-gradient(ellipse 50% 50% at 100% 80%, rgba(224,44,184,0.03) 0%, transparent 55%)",
       }}
     >
-      {/* Floating bits */}
-      <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden", zIndex: 0 }}>
-        {BITS.map((b, i) => (
-          <span key={i} className={`${b.cls} font-pixel`} style={{ position: "absolute", left: b.x, top: b.y, fontSize: b.size, color: b.color, userSelect: "none" }}>
-            {b.ch}
-          </span>
-        ))}
-      </div>
-
+      {/* Sticky viewport */}
       <div
+        className="hero-sticky"
         style={{
-          position: "relative", zIndex: 1,
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
-          gap: "clamp(48px, 6vw, 96px)",
-          alignItems: "center",
+          position: "sticky",
+          top: 0,
+          height: "100vh",
           width: "100%",
+          overflow: "hidden",
         }}
       >
-        {/* Left */}
-        <div>
-          {/* Label */}
-          <div
-            style={{
-              display: "inline-flex", alignItems: "center", gap: "10px",
-              padding: "8px 16px",
-              background: "rgba(29,221,120,0.05)",
-              border: "1px solid rgba(29,221,120,0.15)",
-              borderRadius: "var(--r-xl)",
-              marginBottom: "40px",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(18px)",
-              transition: `opacity 0.7s ${ease}, transform 0.7s ${ease}`,
-            }}
-          >
-            <span style={{ width: "5px", height: "5px", background: "var(--mint)", borderRadius: "50%", boxShadow: "0 0 6px var(--mint)" }} />
-            <span className="t-label" style={{ color: "rgba(29,221,120,0.6)", fontSize: "7px" }}>Portfolio 2025</span>
-          </div>
-
-          {/* Display name */}
-          <div style={{ overflow: "hidden", marginBottom: "24px" }}>
-            <h1
-              className="t-display glow-mint"
-              style={{
-                color: "var(--mint)",
-                display: "block",
-                transform: visible ? "translateY(0)" : "translateY(105%)",
-                transition: `transform 1s ${ease} 0.12s`,
-              }}
-            >
-              PixelDew
-            </h1>
-          </div>
-
-          {/* Divider line */}
-          <div
-            style={{
-              display: "flex", alignItems: "center", gap: "16px",
-              marginBottom: "32px",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(14px)",
-              transition: `opacity 0.7s ${ease} 0.3s, transform 0.7s ${ease} 0.3s`,
-            }}
-          >
-            <div style={{ width: "40px", height: "1px", background: "var(--cyan)", flexShrink: 0 }} />
-            <span className="t-label" style={{ color: "var(--cyan)", fontSize: "7px" }}>Web Creator</span>
-          </div>
-
-          {/* Typewriter */}
-          <div style={{ marginBottom: "28px", minHeight: "1.6em", opacity: visible ? 1 : 0, transition: `opacity 0.7s ${ease} 0.42s` }}>
-            <span className="t-h4" style={{ color: "var(--text-dim)", fontWeight: 500 }}>
-              {displayed}
-              <span style={{ color: "var(--mint)", animation: "tw-blink 1s step-end infinite" }}>|</span>
-            </span>
-          </div>
-
-          {/* Bio */}
-          <p
-            className="t-body-lg"
-            style={{
-              color: "var(--text-muted)",
-              maxWidth: "440px",
-              marginBottom: "52px",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(14px)",
-              transition: `opacity 0.7s ${ease} 0.52s, transform 0.7s ${ease} 0.52s`,
-            }}
-          >
-            Membangun pengalaman digital yang terasa hidup —
-            dari piksel pertama sampai interaksi terakhir.
-          </p>
-
-          {/* CTAs */}
-          <div
-            style={{
-              display: "flex", gap: "12px", flexWrap: "wrap",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(14px)",
-              transition: `opacity 0.7s ${ease} 0.62s, transform 0.7s ${ease} 0.62s`,
-            }}
-          >
-            <a href="#work" className="btn btn-primary">Lihat Karya →</a>
-            <a href="#contact" className="btn btn-border">Hubungi</a>
-          </div>
-        </div>
-
-        {/* Right — 3D Cube */}
+        {/* Three.js Scene */}
         <div
           style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? "scale(1)" : "scale(0.92)",
-            transition: `opacity 1s ${ease} 0.4s, transform 1s ${ease} 0.4s`,
-            position: "relative", minHeight: "400px",
+            position: "absolute",
+            inset: 0,
+            opacity: sceneOpacity,
+            transition: "opacity 0.5s ease",
           }}
         >
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute", inset: 0,
-              background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(29,221,120,0.05) 0%, transparent 70%)",
-              borderRadius: "var(--r-lg)",
-              pointerEvents: "none", zIndex: 0,
-            }}
-          />
-          <PixelCube />
+          <HeroScene scrollProgress={scrollProgress} isMobile={isMobile} />
         </div>
-      </div>
 
-      {/* Scroll hint */}
-      <div aria-hidden="true" style={{ position: "absolute", bottom: "40px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", opacity: 0.22 }}>
-        <span className="t-label" style={{ color: "var(--text)", fontSize: "6px" }}>scroll</span>
-        <span style={{ color: "var(--mint)", fontSize: "13px", animation: "heroFloat 2.2s ease-in-out infinite" }}>↓</span>
+        {/* Flash overlay */}
+        <div
+          className="hero-flash"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(135deg, #1ddd78, #0ecfdf)",
+            opacity: flashOpacity,
+            pointerEvents: "none",
+            zIndex: 10,
+          }}
+        />
+
+        {/* Hero UI (logo, text, buttons) */}
+        {!isMobile && (
+          <div
+            className="hero-ui"
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              paddingBottom: "48px",
+              pointerEvents: scrollProgress > 0.7 ? "none" : "auto",
+              zIndex: 5,
+              opacity: heroUIOpacity,
+              transition: "opacity 0.3s ease",
+            }}
+          >
+            {/* Logo */}
+            <div
+              style={{
+                marginBottom: "32px",
+                textAlign: "center",
+                opacity: scrollProgress > 0.5 ? 0.3 : 1,
+                transition: "opacity 0.3s ease",
+              }}
+            >
+              <div className="t-label" style={{ color: "var(--mint)", marginBottom: "8px" }}>
+                PixelDew
+              </div>
+              <p
+                className="t-body-lg"
+                style={{
+                  color: "var(--text-muted)",
+                  maxWidth: "300px",
+                }}
+              >
+                Scroll to enter the cube
+              </p>
+            </div>
+
+            {/* Scroll hint */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "8px",
+                opacity: scrollProgress > 0.5 ? 0 : 0.4,
+                transition: "opacity 0.3s ease",
+              }}
+            >
+              <span className="t-label" style={{ color: "var(--text)", fontSize: "6px" }}>
+                scroll
+              </span>
+              <span style={{ color: "var(--mint)", fontSize: "13px", animation: "heroFloat 2.2s ease-in-out infinite" }}>
+                ↓
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* Mobile fallback */}
+        {isMobile && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 5,
+            }}
+          >
+            <h1 className="t-display glow-mint" style={{ color: "var(--mint)", marginBottom: "24px" }}>
+              PixelDew
+            </h1>
+            <p className="t-body-lg" style={{ color: "var(--text-muted)", textAlign: "center", maxWidth: "280px" }}>
+              Membangun pengalaman digital yang terasa hidup
+            </p>
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
 }

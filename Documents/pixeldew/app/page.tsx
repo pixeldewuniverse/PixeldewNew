@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,19 +12,46 @@ import Loader from "@/components/Loader";
 import BackgroundMusic from "@/components/BackgroundMusic";
 
 export default function Home() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const reveals = document.querySelectorAll(".section-reveal");
+    reveals.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main style={{ background: "var(--bg, #080012)" }}>
       <Loader />
       <Navbar />
       <Hero />
       <div className="divider" />
-      <About />
+      <div className="section-reveal s1">
+        <About />
+      </div>
       <div className="divider" />
-      <Skills />
+      <div className="section-reveal s2">
+        <Skills />
+      </div>
       <div className="divider" />
-      <FeaturedWork />
+      <div className="section-reveal s3">
+        <FeaturedWork />
+      </div>
       <div className="divider" />
-      <Contact />
+      <div className="section-reveal s4">
+        <Contact />
+      </div>
       <Footer />
       <DewbitChat />
       <BackgroundMusic />
