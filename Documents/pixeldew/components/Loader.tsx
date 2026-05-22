@@ -10,26 +10,30 @@ export default function Loader() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Mute wajib — pastikan tidak ada suara
-    video.muted  = true;
-    video.volume = 0;
+    // Sound ON
+    video.muted  = false;
+    video.volume = 0.8;
 
     const onEnded = () => {
       setDone(true);
       setTimeout(() => setHidden(true), 700);
     };
 
-    // Fallback: hide setelah max 5s kalau video tidak play
     const fallback = setTimeout(() => {
       setDone(true);
       setTimeout(() => setHidden(true), 700);
-    }, 5000);
+    }, 8000);
 
     video.addEventListener("ended", onEnded);
+
+    // Autoplay dengan sound butuh user gesture — coba play dulu
     video.play().catch(() => {
-      // Autoplay blocked — langsung skip loader
-      setDone(true);
-      setTimeout(() => setHidden(true), 400);
+      // Kalau blocked, mute dan coba lagi
+      video.muted = true;
+      video.play().catch(() => {
+        setDone(true);
+        setTimeout(() => setHidden(true), 400);
+      });
     });
 
     return () => {
@@ -55,17 +59,19 @@ export default function Loader() {
         pointerEvents: done ? "none" : "all",
       }}
     >
+      {/* Video proporsional — tidak stretch */}
       <video
         ref={videoRef}
         src="/loader.mp4"
-        muted
         playsInline
         autoPlay
         preload="auto"
         style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
+          maxWidth: "100%",
+          maxHeight: "100%",
+          width: "auto",
+          height: "auto",
+          objectFit: "contain",
           display: "block",
         }}
       />
