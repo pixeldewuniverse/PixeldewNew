@@ -306,7 +306,7 @@ export default function ProjectDetail({ project, nextProject }: Props) {
                 {project.animation === "cards"    && <AnimCards    color={project.color} />}
                 {project.animation === "agency"   && <AnimAgency   color={project.color} />}
                 {project.animation === "property" && <AnimProperty color={project.color} />}
-                {project.animation === "bento"    && <AnimBento    color={project.color} />}
+                {(project.animation === "bento" || project.animation === "ios") && <AnimBento color={project.color} />}
               </>
             )}
           </div>

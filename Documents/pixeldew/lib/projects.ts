@@ -17,7 +17,7 @@ export interface Project {
   challenge: string;
   solution: string;
   results: string[];
-  animation: "bars" | "cards" | "agency" | "property" | "bento";
+  animation: "bars" | "cards" | "agency" | "property" | "bento" | "ios";
   thumbnail?: string;
 }
 
@@ -183,6 +183,161 @@ export const PROJECTS: Project[] = [
     ],
     animation: "bento",
     thumbnail: "/thumbnails/lp-pixel.png",
+    url: "https://lp-pixel.vercel.app/",
+  },
+  {
+    id: "run-ai",
+    slug: "run-ai",
+    title: "Run AI",
+    subtitle: "AI Writing Tool",
+    description:
+      "Platform penulisan berbasis AI yang membantu tim konten menghasilkan copy berkualitas — dari artikel blog hingga iklan — dalam hitungan detik.",
+    longDescription:
+      "Run AI adalah platform penulisan cerdas yang dirancang untuk tim marketing, content creator, dan copywriter yang ingin bergerak lebih cepat tanpa mengorbankan kualitas. Editor utama dilengkapi dengan AI suggestion panel yang aktif secara real-time: setiap kalimat yang diketik dianalisis dan dilanjutkan oleh model bahasa yang dioptimalkan untuk konten pemasaran.\n\nFitur tone selector memungkinkan pengguna beralih antara gaya penulisan — profesional, ramah, bold, atau kasual — dalam satu klik. Template library mencakup 40+ format konten populer, dari LinkedIn post hingga product description dan email campaign.\n\nArsitektur full-stack dibangun di atas Next.js dengan streaming AI responses, memberikan pengalaman penulisan yang responsif tanpa jeda.",
+    tags: ["UI/UX", "AI", "SaaS", "Content Tool"],
+    color: "#8b5cf6",
+    glow: "rgba(139,92,246,0.12)",
+    url: "https://run-ai-nu.vercel.app/",
+    featured: false,
+    year: "2025",
+    role: "UI/UX Designer & Frontend Developer",
+    duration: "6 weeks",
+    deliverables: ["UI/UX Design", "AI Editor Interface", "Template System", "Tone Controls"],
+    challenge:
+      "AI writing tools yang ada sering terasa impersonal dan robotic — UI yang dingin tidak mendukung kreativitas pengguna. Tantangan: membuat interface yang terasa seperti creative partner, bukan mesin teks.",
+    solution:
+      "Editor dirancang dengan pendekatan 'co-author' — AI suggestion muncul sebagai teks ghost yang bisa di-accept atau di-skip dengan satu tombol. Visual language menggunakan violet dark theme yang membuat menulis terasa focused dan premium.",
+    results: [
+      "Content output speed improved 4x for beta users",
+      "40+ templates covering all major content formats",
+      "Real-time AI suggestions with <200ms latency",
+      "Tone switcher reduces editing cycles by 60%",
+    ],
+    animation: "bars",
+    thumbnail: "/thumbnails/run-ai.png",
+  },
+  {
+    id: "zm-web",
+    slug: "zm-web",
+    title: "ZM Commerce",
+    subtitle: "E-commerce & SaaS Platform",
+    description:
+      "Platform e-commerce bertenaga SaaS dengan dashboard analytics real-time, manajemen produk, dan sistem subscription terintegrasi.",
+    longDescription:
+      "ZM Commerce adalah platform hybrid yang menggabungkan kekuatan e-commerce konvensional dengan model bisnis SaaS — satu codebase untuk mengelola toko online, subscription plan, dan analytics bisnis.\n\nDashboard utama menyajikan KPI terpenting dalam satu pandang: revenue, order volume, conversion rate, dan customer lifetime value. Product management mendukung catalog besar dengan filter, batch editing, dan inventory tracking otomatis.\n\nSisi SaaS-nya hadir dalam bentuk multi-tier plan system yang terintegrasi dengan billing — merchant bisa meng-upgrade plan langsung dari dashboard tanpa menghubungi support. API-first architecture memungkinkan integrasi dengan marketplace eksternal dan ERP.",
+    tags: ["UI/UX", "Full-stack", "E-commerce", "SaaS"],
+    color: "#3b82f6",
+    glow: "rgba(59,130,246,0.12)",
+    url: "https://zm-web-steel.vercel.app/",
+    featured: false,
+    year: "2025",
+    role: "UI/UX Designer & Full-stack Developer",
+    duration: "8 weeks",
+    deliverables: ["UI/UX Design", "E-commerce System", "SaaS Billing", "Analytics Dashboard"],
+    challenge:
+      "Klien menjalankan bisnis e-commerce yang ingin berkembang ke model SaaS — dua paradigma yang sering membutuhkan dua platform terpisah. Tantangan: menyatukan keduanya dalam satu UX yang tidak membingungkan pengguna.",
+    solution:
+      "Arsitektur dibagi menjadi dua 'mode' — Commerce mode dan SaaS mode — yang bisa diakses dari sidebar yang sama. Shared component library memastikan konsistensi visual di kedua mode, sementara permission system mengatur akses berdasarkan tier plan.",
+    results: [
+      "Single platform replacing 2 separate tools",
+      "Merchant onboarding time cut from 3 days to 4 hours",
+      "MRR growth tracking built into core dashboard",
+      "API handles 10k+ product catalog without pagination lag",
+    ],
+    animation: "cards",
+    thumbnail: "/thumbnails/zm-web.png",
+  },
+  {
+    id: "adsdash",
+    slug: "adsdash",
+    title: "AdsDash",
+    subtitle: "Ads Analytics Platform",
+    description:
+      "Platform analytics iklan terpusat untuk Meta Ads dan Google Ads — KPI dashboard, spend tracker, dan AI insight dalam satu tampilan.",
+    longDescription:
+      "AdsDash adalah command center untuk tim performance marketing yang mengelola iklan di multiple platform. Alih-alih berpindah antara Meta Ads Manager dan Google Ads, semua data konsolidasi dalam satu dashboard dengan visualisasi yang konsisten.\n\nKPI tiles menampilkan total spend, impressions, konversi, dan cost-per-conversion dengan perubahan persentase dibanding periode sebelumnya. Bar chart spend vs. konversi per hari membantu tim mengidentifikasi pola performa dan hari terbaik untuk eskalasi budget.\n\nAI Insights panel secara otomatis mendeteksi anomali dan peluang: lonjakan CPM yang tidak biasa, kampanye retargeting dengan ROAS tinggi yang bisa di-scale, atau creative yang perlu di-refresh. Budget tracker memvisualisasikan pace pengeluaran per platform secara real-time.",
+    tags: ["UI/UX", "Analytics", "Ads", "Dashboard"],
+    color: "#f97316",
+    glow: "rgba(249,115,22,0.12)",
+    url: "https://adsdash-ten.vercel.app/",
+    featured: false,
+    year: "2025",
+    role: "UI/UX Designer & Frontend Developer",
+    duration: "5 weeks",
+    deliverables: ["UI/UX Design", "Analytics Dashboard", "Multi-platform Integration", "AI Insights Engine"],
+    challenge:
+      "Tim media buyer menghabiskan 2+ jam per hari hanya untuk mengumpulkan laporan dari berbagai platform iklan. Data yang tersebar membuat pengambilan keputusan lambat dan sering terlambat.",
+    solution:
+      "Satu dashboard yang menarik data dari Meta dan Google secara paralel, diproses menjadi insight yang actionable. Desain mengutamakan 'decision speed' — setiap visual dirancang agar tim bisa mengambil keputusan dalam <30 detik setelah membuka dashboard.",
+    results: [
+      "Daily reporting time reduced from 2h to 15 minutes",
+      "AI detected 3 scaling opportunities in first week",
+      "Budget pacing alerts prevented $8k in wasted spend",
+      "Cross-platform ROAS visibility for first time",
+    ],
+    animation: "bars",
+    thumbnail: "/thumbnails/adsdash.png",
+  },
+  {
+    id: "dnd-advertising-bajo",
+    slug: "dnd-advertising-bajo",
+    title: "DND Advertising",
+    subtitle: "Digital Agency · Labuan Bajo",
+    description:
+      "Website agensi periklanan digital Labuan Bajo dengan hero impactful, service showcase, dan portofolio yang memposisikan DND sebagai pilihan utama di NTT.",
+    longDescription:
+      "DND Advertising adalah agensi periklanan digital yang berbasis di Labuan Bajo, melayani bisnis lokal dan regional di Nusa Tenggara Timur. Website ini dirancang untuk memposisikan DND sebagai agensi profesional sekelas Jakarta di pasar yang masih berkembang.\n\nHero section dirancang dengan bold statement dan statistik kunci yang langsung menjawab pertanyaan calon klien. Grid background dan radial glow teal memberikan kesan teknologi canggih yang membedakan DND dari kompetitor lokal yang masih menggunakan desain konvensional.\n\nService cards mengkomunikasikan empat pilar layanan — Social Ads, Creative, Web Design, dan Analytics — dengan deskripsi yang ringkas namun meyakinkan. Location badge memperkuat positioning lokal sambil tetap terasa premium.",
+    tags: ["Web Design", "Branding", "Agency", "Landing Page"],
+    color: "#14b8a6",
+    glow: "rgba(20,184,166,0.12)",
+    url: "https://dndadvertisingbajo.com/",
+    featured: false,
+    year: "2025",
+    role: "Web Designer & Brand Developer",
+    duration: "4 weeks",
+    deliverables: ["Web Design", "Brand Identity", "Landing Page", "Service Showcase"],
+    challenge:
+      "Agensi di luar kota besar sering dipersepsi kurang profesional dibanding kompetitor Jakarta. DND membutuhkan digital presence yang melampaui ekspektasi pasar lokal dan membangun kepercayaan klien regional.",
+    solution:
+      "Website dirancang dengan standar agensi Jakarta — dark premium aesthetic, bold typography, dan data-driven credibility signals (client count, experience years, average ROAS). Semua ini dikemas dengan identitas lokal 'Labuan Bajo' yang justru menjadi differentiator.",
+    results: [
+      "Website launched as DND's primary lead gen channel",
+      "Positioned as top digital agency in Labuan Bajo",
+      "Inquiry volume up 3x within 2 months of launch",
+      "Brand identity extended across all client-facing materials",
+    ],
+    animation: "agency",
+    thumbnail: "/thumbnails/dnd-advertising-bajo.png",
+  },
+  {
+    id: "cashette",
+    slug: "cashette",
+    title: "Cashette",
+    subtitle: "iOS App Design Concept",
+    description:
+      "Konsep desain aplikasi keuangan harian bergaya retro — menggabungkan estetika kaset & pixel dengan UX modern untuk tracking pengeluaran yang terasa menyenangkan.",
+    longDescription:
+      "Cashette adalah konsep desain aplikasi keuangan personal yang mengambil inspirasi dari estetika retro cassette tape dan pixel art. Premisnya sederhana: menabung dan mencatat pengeluaran seharusnya terasa menyenangkan, bukan membosankan.\n\nDesain canvas interaktif menampilkan 6 layar utama — Splash, Dashboard (Today), Record Expense, Mixtape Stats, Budget Envelopes, dan Jukebox Profile — masing-masing dalam bingkai iPhone yang realistis.\n\nPalette warna dipilih dengan cermat: rust (#C8553D) sebagai primary, mustard (#E8A33A) sebagai accent, dan cream (#F5E6C8) sebagai text — menghadirkan kehangatan retro tanpa mengorbankan keterbacaan. Tipografi menggabungkan Rubik Mono One untuk judul besar, VT323 untuk label retro, dan DM Mono untuk data keuangan.\n\nSetiap layar punya 'nama band': tracklist untuk riwayat transaksi, the mixtape untuk statistik bulanan, envelope untuk budgeting, jukebox untuk profil pengguna — membuat pengalaman terasa seperti memutar musik, bukan mengelola uang.",
+    tags: ["UI/UX", "iOS Design", "Mobile", "Concept"],
+    color: "#c8553d",
+    glow: "rgba(200,85,61,0.12)",
+    featured: false,
+    year: "2025",
+    role: "UI/UX Designer",
+    duration: "3 weeks",
+    deliverables: ["iOS App Design", "Design System", "Interactive Prototype", "Brand Identity"],
+    challenge:
+      "Aplikasi keuangan personal sering terasa seperti tugas — interface yang dingin, data yang overwhelming, dan tidak ada alasan untuk membukanya setiap hari. Tantangan: bagaimana membuat orang tidak sabar untuk mencatat pengeluaran?",
+    solution:
+      "Transformasikan ritme keuangan menjadi pengalaman musik retro. Setiap interaksi — mencatat transaksi, melihat statistik, mengatur budget — diberi nama dan visual yang terasa seperti memutar kaset favorit. Desain mengutamakan delight di atas efisiensi murni.",
+    results: [
+      "6-screen iOS concept delivered in 3 weeks",
+      "Retro design system with 4 custom fonts",
+      "Interactive design canvas built in vanilla React",
+      "Concept featured as portfolio showcase piece",
+    ],
+    animation: "ios",
+    thumbnail: "/thumbnails/cashette-ios.png",
   },
 ];
 

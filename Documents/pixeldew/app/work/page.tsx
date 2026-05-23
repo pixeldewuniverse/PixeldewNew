@@ -253,7 +253,7 @@ export default function WorkPage() {
                       {p.animation === "cards"    && <AnimCards    color={p.color} />}
                       {p.animation === "agency"   && <AnimAgency   color={p.color} />}
                       {p.animation === "property" && <AnimProperty color={p.color} />}
-                      {p.animation === "bento"    && <AnimBento    color={p.color} />}
+                      {(p.animation === "bento" || p.animation === "ios") && <AnimBento color={p.color} />}
                     </>
                   )}
                 </div>
