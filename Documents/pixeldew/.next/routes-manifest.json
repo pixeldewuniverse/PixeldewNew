@@ -63,6 +63,12 @@
       "namedRegex": "^/api/generate(?:/)?$"
     },
     {
+      "page": "/game",
+      "regex": "^/game(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/game(?:/)?$"
+    },
+    {
       "page": "/generate",
       "regex": "^/generate(?:/)?$",
       "routeKeys": {},
