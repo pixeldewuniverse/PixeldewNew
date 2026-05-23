@@ -24,10 +24,7 @@ export default function Home() {
       },
       { threshold: 0.1 }
     );
-
-    const reveals = document.querySelectorAll(".section-reveal");
-    reveals.forEach((el) => observer.observe(el));
-
+    document.querySelectorAll(".section-reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -37,21 +34,13 @@ export default function Home() {
       <Navbar />
       <Hero />
       <div className="divider" />
-      <div className="section-reveal s1">
-        <About />
-      </div>
+      <div className="section-reveal s1"><About /></div>
       <div className="divider" />
-      <div className="section-reveal s2">
-        <Skills />
-      </div>
+      <div className="section-reveal s2"><Skills /></div>
       <div className="divider" />
-      <div className="section-reveal s3">
-        <FeaturedWork />
-      </div>
+      <div className="section-reveal s3"><FeaturedWork /></div>
       <div className="divider" />
-      <div className="section-reveal s4">
-        <Contact />
-      </div>
+      <div className="section-reveal s4"><Contact /></div>
       <Footer />
       <DewbitChat />
       <BackgroundMusic />

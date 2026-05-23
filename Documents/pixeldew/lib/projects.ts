@@ -1,37 +1,170 @@
 export interface Project {
   id: string;
+  slug: string;
   title: string;
   subtitle: string;
   description: string;
+  longDescription: string;
   tags: string[];
   color: string;
   glow: string;
   url?: string;
   featured: boolean;
+  year: string;
+  role: string;
+  duration: string;
+  deliverables: string[];
+  challenge: string;
+  solution: string;
+  results: string[];
+  animation: "bars" | "cards" | "agency" | "property";
+}
+
+export interface ProjectPlaceholder {
+  id: string;
+  title: string;
+  subtitle: string;
+  color: string;
+  status: "Coming Soon" | "In Progress" | "Under Wraps";
 }
 
 export const PROJECTS: Project[] = [
   {
     id: "kadobajo",
+    slug: "kadobajo",
     title: "Kadobajo.id",
     subtitle: "CRM Platform",
-    description: "Sistem CRM untuk manajemen relasi pelanggan, pipeline penjualan, dan analitik bisnis secara real-time.",
+    description:
+      "Sistem CRM untuk manajemen relasi pelanggan, pipeline penjualan, dan analitik bisnis secara real-time.",
+    longDescription:
+      "Kadobajo.id adalah platform CRM yang dirancang untuk bisnis kecil-menengah di Indonesia. Platform ini menggabungkan manajemen relasi pelanggan, pipeline penjualan, dan analitik bisnis dalam satu antarmuka yang intuitif dan responsif.\n\nDibangun di atas Next.js dan Supabase, Kadobajo menghadirkan data real-time tanpa lag, dengan sistem notifikasi cerdas yang memastikan tidak ada follow-up terlewatkan. Dashboard dirancang dengan filosofi progressive disclosure — tampilan sederhana untuk penggunaan harian, analitik mendalam hanya satu klik.\n\nSeluruh alur kerja CRM — dari lead masuk hingga deal closed — divisualisasikan dalam pipeline yang bisa dikustomisasi. Tim non-teknis dapat menggunakannya tanpa pelatihan khusus.",
     tags: ["UI/UX", "Frontend", "CRM", "Dashboard"],
-    color: "#2CFF8F",
-    glow: "rgba(44,255,143,0.12)",
+    color: "#1ddd78",
+    glow: "rgba(29,221,120,0.12)",
     url: "https://kadobajo.id",
     featured: true,
+    year: "2024",
+    role: "UI/UX Designer & Frontend Developer",
+    duration: "8 weeks",
+    deliverables: ["UI/UX Design", "Frontend Dev", "Dashboard System", "CRM Logic"],
+    challenge:
+      "Klien membutuhkan CRM yang terasa mudah dijangkau oleh staf non-teknis, sekaligus mampu menampilkan hubungan data yang kompleks secara intuitif. Tantangan utama: membuat sistem enterprise-grade yang tidak terasa seperti enterprise software.",
+    solution:
+      "Kami merancang sistem progressive disclosure — tampilan sederhana untuk penggunaan sehari-hari, analitik lanjutan hanya satu klik dari permukaan. Dibangun dengan Next.js + Supabase + Tailwind, dengan fokus pada performa dan UX yang bersih.",
+    results: [
+      "60% reduction in customer follow-up time",
+      "Adopted by 3 business units on launch",
+      "Dashboard loads in < 1.2s",
+      "Zero training required for daily use",
+    ],
+    animation: "bars",
   },
   {
     id: "gripiz-kuta",
+    slug: "gripiz-kuta",
     title: "The Gripiz Kuta",
     subtitle: "Restaurant Website",
-    description: "Website restoran modern dengan menu interaktif, reservasi online, dan visual storytelling yang kuat.",
+    description:
+      "Website restoran modern dengan menu interaktif, reservasi online, dan visual storytelling yang kuat.",
+    longDescription:
+      "The Gripiz Kuta adalah restoran premium di Bali yang membutuhkan digital presence setara kualitas pengalaman diningnya. Website ini dibangun dengan pendekatan cinema-first: tipografi besar, treatment foto atmosferik, dan micro-animation yang halus di setiap interaksi.\n\nSistem reservasi online dirancang dalam 3 langkah — pilih tanggal, pilih meja, konfirmasi. Tidak ada form panjang, tidak ada friction yang tidak perlu. Menu digital interaktif memungkinkan tamu mengeksplorasi hidangan sebelum datang.\n\nIdentitas brand diperluas dari web ke seluruh touchpoint fisik: menu cetak, signage, dan media sosial — menciptakan pengalaman yang konsisten dari online ke offline.",
     tags: ["Web Design", "Branding", "Motion", "Restaurant"],
-    color: "#FF3BD4",
-    glow: "rgba(255,59,212,0.12)",
+    color: "#e02cb8",
+    glow: "rgba(224,44,184,0.12)",
     url: "#",
     featured: true,
+    year: "2024",
+    role: "Web Designer & Brand Developer",
+    duration: "4 weeks",
+    deliverables: ["Web Design", "Branding", "Motion Design", "Reservation System"],
+    challenge:
+      "Website restoran sering terasa generik dan membosankan. Gripiz membutuhkan sesuatu yang terasa sepremium pengalaman dining mereka — cepat, visual, mudah diingat, dan tidak terasa seperti template.",
+    solution:
+      "Dibangun di atas bahasa desain cinema-first. Tipografi besar yang berani, treatment foto atmosferik, micro-animation halus, dan alur reservasi dalam 3 langkah. Setiap elemen dirancang untuk membuat tamu semakin antusias sebelum menginjakkan kaki ke restoran.",
+    results: [
+      "Online reservations up 3x in first month",
+      "Avg session time 4.2 minutes",
+      "Featured in local food & lifestyle blog",
+      "Brand identity extended to menus & signage",
+    ],
+    animation: "cards",
+  },
+  {
+    id: "maharani-digital-hub",
+    slug: "maharani-digital-hub",
+    title: "Maharani Digital Hub",
+    subtitle: "Digital Agency Website",
+    description:
+      "Website agensi digital dengan portofolio interaktif, service showcase, dan sistem booking konsultasi yang seamless.",
+    longDescription:
+      "Maharani Digital Hub adalah agensi digital berbasis di Bali yang memerlukan website yang mencerminkan keahlian mereka dalam dunia digital. Website ini dirancang untuk mengkonversi pengunjung menjadi klien — setiap halaman adalah sales pitch yang terasa seperti pengalaman.\n\nPortofolio interaktif memungkinkan calon klien menelusuri studi kasus lengkap dengan hasil nyata. Sistem booking konsultasi mempersingkat siklus penjualan: dari interest ke scheduled call hanya dalam dua klik.\n\nArsitektur visual menggunakan grid asimetris, tipografi bold, dan accent cyan yang khas — membuat Maharani tampil berbeda dari kompetitor yang rata-rata menggunakan template generik.",
+    tags: ["UI/UX", "Frontend", "Agency", "Booking"],
+    color: "#0ecfdf",
+    glow: "rgba(14,207,223,0.12)",
+    url: "#",
+    featured: true,
+    year: "2025",
+    role: "UI/UX Designer & Frontend Developer",
+    duration: "6 weeks",
+    deliverables: ["UI/UX Design", "Frontend Dev", "Booking System", "Portfolio CMS"],
+    challenge:
+      "Agensi digital sering tampil dengan website yang tidak mencerminkan kemampuan mereka sendiri. Maharani membutuhkan website yang bisa menjadi bukti hidup dari kualitas kerja mereka — modern, cepat, dan sangat bisa dikonversi.",
+    solution:
+      "Desain dengan pendekatan 'conversion-first': hero yang langsung menjawab pertanyaan 'kenapa kami?', portofolio studi kasus yang terstruktur, dan CTA booking yang ditempatkan strategis di setiap scroll stop.",
+    results: [
+      "Consultation bookings up 2.5x in 6 weeks",
+      "Bounce rate dropped from 72% to 38%",
+      "Average session duration 3.8 minutes",
+      "3 enterprise clients onboarded from organic traffic",
+    ],
+    animation: "agency",
+  },
+  {
+    id: "dewata-home-living",
+    slug: "dewata-home-living",
+    title: "Dewata Home Living",
+    subtitle: "Property Listing Platform",
+    description:
+      "Platform listing properti premium Bali dengan pencarian cerdas, virtual tour, dan manajemen listing real-time.",
+    longDescription:
+      "Dewata Home Living adalah platform properti premium yang menghubungkan pembeli dengan vila dan rumah pilihan di Bali. Platform ini dirancang untuk menempatkan properti dalam konteks lifestyle — bukan sekadar listing harga dan luas tanah.\n\nFitur pencarian cerdas dengan filter multi-dimensi (lokasi, tipe, budget, amenities) memberikan pengalaman discovery yang intuitif. Setiap listing dilengkapi dengan galeri berkualitas tinggi, virtual walkthrough, dan informasi lingkungan sekitar.\n\nSistem manajemen untuk agen dan pemilik properti memungkinkan update listing secara real-time, pelacakan inquiries, dan laporan performa listing dalam satu dashboard yang bersih.",
+    tags: ["UI/UX", "Full-stack", "Property", "Platform"],
+    color: "#4a7aff",
+    glow: "rgba(74,122,255,0.12)",
+    url: "#",
+    featured: true,
+    year: "2025",
+    role: "UI/UX Designer & Full-stack Developer",
+    duration: "10 weeks",
+    deliverables: ["UI/UX Design", "Frontend Dev", "Backend API", "CMS Dashboard"],
+    challenge:
+      "Platform properti existing di Bali terasa outdated dan tidak mencerminkan positioning premium yang diinginkan klien. Pembeli properti high-end mengharapkan pengalaman setara luxury brand, bukan portal listing generik.",
+    solution:
+      "Platform dibangun dari zero dengan filosofi 'property as lifestyle' — visual-first, data-rich, dan mobile-optimized. Backend Next.js API + PostgreSQL untuk real-time availability. UI menggunakan sistem desain yang terinspirasi dari platform luxury real estate internasional.",
+    results: [
+      "Platform live dengan 120+ premium listings",
+      "Avg inquiry-to-viewing conversion 28%",
+      "Mobile traffic accounts for 68% of sessions",
+      "Featured in Bali-based property investor community",
+    ],
+    animation: "property",
+  },
+];
+
+export const PLACEHOLDERS: ProjectPlaceholder[] = [
+  {
+    id: "placeholder-saas",
+    title: "SaaS Dashboard",
+    subtitle: "Analytics Platform",
+    color: "rgba(14,207,223,0.08)",
+    status: "In Progress",
+  },
+  {
+    id: "placeholder-mobile",
+    title: "Mobile Experience",
+    subtitle: "React Native App",
+    color: "rgba(74,122,255,0.08)",
+    status: "Under Wraps",
   },
 ];
 

@@ -288,20 +288,7 @@ section {
 @keyframes tw-blink{0%,100%{opacity:1}50%{opacity:0}}
 @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-/* ── Hero Parallax Scroll ── */
-.hero-scroll-zone {
-  position: relative;
-  width: 100%;
-}
-
-.hero-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
+/* ── Hero Flash Overlay ── */
 .hero-flash {
   position: absolute;
   inset: 0;
@@ -311,6 +298,7 @@ section {
   z-index: 10;
 }
 
+/* ── Hero UI (logo + hint overlay) ── */
 .hero-ui {
   position: absolute;
   inset: 0;
@@ -321,6 +309,15 @@ section {
   padding-bottom: 48px;
   pointer-events: none;
   z-index: 5;
+}
+
+/* ── Hero scroll hint ── */
+.hero-scroll-hint {
+  font-family: "Press Start 2P", monospace;
+  font-size: 7px;
+  letter-spacing: 0.25em;
+  color: rgba(29, 221, 120, 0.45);
+  animation: heroFloat 2s ease-in-out infinite;
 }
 
 /* ── Section Reveals ── */

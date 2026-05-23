@@ -3,10 +3,19 @@
     "[project]/PixeldewNew/Documents/pixeldew/app/_not-found/page": [
       "static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
     ],
+    "[project]/PixeldewNew/Documents/pixeldew/app/game/page": [
+      "static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
+    ],
     "[project]/PixeldewNew/Documents/pixeldew/app/generate/page": [
       "static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
     ],
     "[project]/PixeldewNew/Documents/pixeldew/app/page": [
+      "static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
+    ],
+    "[project]/PixeldewNew/Documents/pixeldew/app/work/[slug]/page": [
+      "static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
+    ],
+    "[project]/PixeldewNew/Documents/pixeldew/app/work/page": [
       "static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
     ]
   },

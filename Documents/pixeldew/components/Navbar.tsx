@@ -34,8 +34,19 @@ export default function Navbar() {
         <PixelDewLogo size={32} showText />
       </Link>
 
-      {/* Available badge */}
-      <div
+      {/* Nav links */}
+      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        <Link
+          href="/game"
+          style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "8px 14px", background: "rgba(14,207,223,0.06)", border: "1px solid rgba(14,207,223,0.18)", borderRadius: "var(--r-xl)", cursor: "none", transition: "all 0.2s", minHeight: "40px" }}
+          onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = "rgba(14,207,223,0.12)"; el.style.borderColor = "rgba(14,207,223,0.4)"; }}
+          onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = "rgba(14,207,223,0.06)"; el.style.borderColor = "rgba(14,207,223,0.18)"; }}
+        >
+          <span style={{ fontFamily: '"Press Start 2P", monospace', fontSize: "6px", color: "#0ecfdf", letterSpacing: "0.1em" }}>▶ GAME</span>
+        </Link>
+
+        {/* Available badge */}
+        <div
         style={{
           display: "flex",
           alignItems: "center",
@@ -51,6 +62,7 @@ export default function Navbar() {
         <span className="t-small" style={{ color: "rgba(29,221,120,0.7)" }}>
           Available for projects
         </span>
+      </div>
       </div>
 
       <style>{`
