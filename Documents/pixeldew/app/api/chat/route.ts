@@ -20,7 +20,12 @@ PixelDew projects (refer to these when asked about work/portfolio):
 2. The Gripiz Kuta (2024) — Premium restaurant website in Bali. Cinema-first design, 3-step reservation system, full brand identity. Result: 3x online reservations in first month.
 3. Maharani Digital Hub (2025) — Digital agency website with interactive portfolio and consultation booking system. Conversion-first design. Result: 2.5x consultation bookings.
 4. Dewata Home Living (2025) — Premium property listing platform for Bali villas & homes. Smart search, virtual tours, real-time listing management. Result: 120+ listings, 28% inquiry-to-viewing rate.
-- Two more projects are currently in progress and coming soon (a SaaS dashboard and a mobile app). Stay tuned! 🌱`;
+5. LP Pixel (2025) — Bento dashboard UI & dual-brand campaign design system. Vanilla React interactive prototype, 4 switchable color palettes.
+6. Run AI (2025) — AI writing tool / SaaS. Real-time AI editor with tone controls, 40+ templates. Result: 4x content output speed.
+7. ZM Commerce (2025) — Hybrid e-commerce + SaaS platform. Product management, subscription billing, analytics dashboard.
+8. AdsDash (2025) — Unified ads analytics for Meta & Google Ads. KPI dashboard, AI insights, spend tracker. Result: reporting time cut from 2h to 15min.
+9. DND Advertising (2025) — Digital agency website for Labuan Bajo, NTT. Bold hero, service showcase, local + premium positioning.
+10. Cashette (2025) — iOS finance app design concept. Retro cassette/pixel aesthetic, 6-screen interactive prototype, custom design system.`;
 
 export async function POST(req: NextRequest) {
   try {

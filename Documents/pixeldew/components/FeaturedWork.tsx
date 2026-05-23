@@ -301,7 +301,7 @@ function ProjectCard({ project, index, visible }: { project: Project; index: num
             {project.animation === "cards"    && <AnimCards    color={project.color} />}
             {project.animation === "agency"   && <AnimAgency   color={project.color} />}
             {project.animation === "property" && <AnimProperty color={project.color} />}
-            {project.animation === "bento"    && <AnimBento    color={project.color} />}
+            {(project.animation === "bento" || project.animation === "ios") && <AnimBento color={project.color} />}
           </>
         )}
         {/* Corner glow */}
