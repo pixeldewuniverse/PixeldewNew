@@ -17,6 +17,15 @@ export interface Project {
   challenge: string;
   solution: string;
   results: string[];
+  animation: "bars" | "cards" | "agency" | "property";
+}
+
+export interface ProjectPlaceholder {
+  id: string;
+  title: string;
+  subtitle: string;
+  color: string;
+  status: "Coming Soon" | "In Progress" | "Under Wraps";
 }
 
 export const PROJECTS: Project[] = [
@@ -48,6 +57,7 @@ export const PROJECTS: Project[] = [
       "Dashboard loads in < 1.2s",
       "Zero training required for daily use",
     ],
+    animation: "bars",
   },
   {
     id: "gripiz-kuta",
@@ -77,6 +87,84 @@ export const PROJECTS: Project[] = [
       "Featured in local food & lifestyle blog",
       "Brand identity extended to menus & signage",
     ],
+    animation: "cards",
+  },
+  {
+    id: "maharani-digital-hub",
+    slug: "maharani-digital-hub",
+    title: "Maharani Digital Hub",
+    subtitle: "Digital Agency Website",
+    description:
+      "Website agensi digital dengan portofolio interaktif, service showcase, dan sistem booking konsultasi yang seamless.",
+    longDescription:
+      "Maharani Digital Hub adalah agensi digital berbasis di Bali yang memerlukan website yang mencerminkan keahlian mereka dalam dunia digital. Website ini dirancang untuk mengkonversi pengunjung menjadi klien — setiap halaman adalah sales pitch yang terasa seperti pengalaman.\n\nPortofolio interaktif memungkinkan calon klien menelusuri studi kasus lengkap dengan hasil nyata. Sistem booking konsultasi mempersingkat siklus penjualan: dari interest ke scheduled call hanya dalam dua klik.\n\nArsitektur visual menggunakan grid asimetris, tipografi bold, dan accent cyan yang khas — membuat Maharani tampil berbeda dari kompetitor yang rata-rata menggunakan template generik.",
+    tags: ["UI/UX", "Frontend", "Agency", "Booking"],
+    color: "#0ecfdf",
+    glow: "rgba(14,207,223,0.12)",
+    url: "#",
+    featured: true,
+    year: "2025",
+    role: "UI/UX Designer & Frontend Developer",
+    duration: "6 weeks",
+    deliverables: ["UI/UX Design", "Frontend Dev", "Booking System", "Portfolio CMS"],
+    challenge:
+      "Agensi digital sering tampil dengan website yang tidak mencerminkan kemampuan mereka sendiri. Maharani membutuhkan website yang bisa menjadi bukti hidup dari kualitas kerja mereka — modern, cepat, dan sangat bisa dikonversi.",
+    solution:
+      "Desain dengan pendekatan 'conversion-first': hero yang langsung menjawab pertanyaan 'kenapa kami?', portofolio studi kasus yang terstruktur, dan CTA booking yang ditempatkan strategis di setiap scroll stop.",
+    results: [
+      "Consultation bookings up 2.5x in 6 weeks",
+      "Bounce rate dropped from 72% to 38%",
+      "Average session duration 3.8 minutes",
+      "3 enterprise clients onboarded from organic traffic",
+    ],
+    animation: "agency",
+  },
+  {
+    id: "dewata-home-living",
+    slug: "dewata-home-living",
+    title: "Dewata Home Living",
+    subtitle: "Property Listing Platform",
+    description:
+      "Platform listing properti premium Bali dengan pencarian cerdas, virtual tour, dan manajemen listing real-time.",
+    longDescription:
+      "Dewata Home Living adalah platform properti premium yang menghubungkan pembeli dengan vila dan rumah pilihan di Bali. Platform ini dirancang untuk menempatkan properti dalam konteks lifestyle — bukan sekadar listing harga dan luas tanah.\n\nFitur pencarian cerdas dengan filter multi-dimensi (lokasi, tipe, budget, amenities) memberikan pengalaman discovery yang intuitif. Setiap listing dilengkapi dengan galeri berkualitas tinggi, virtual walkthrough, dan informasi lingkungan sekitar.\n\nSistem manajemen untuk agen dan pemilik properti memungkinkan update listing secara real-time, pelacakan inquiries, dan laporan performa listing dalam satu dashboard yang bersih.",
+    tags: ["UI/UX", "Full-stack", "Property", "Platform"],
+    color: "#4a7aff",
+    glow: "rgba(74,122,255,0.12)",
+    url: "#",
+    featured: true,
+    year: "2025",
+    role: "UI/UX Designer & Full-stack Developer",
+    duration: "10 weeks",
+    deliverables: ["UI/UX Design", "Frontend Dev", "Backend API", "CMS Dashboard"],
+    challenge:
+      "Platform properti existing di Bali terasa outdated dan tidak mencerminkan positioning premium yang diinginkan klien. Pembeli properti high-end mengharapkan pengalaman setara luxury brand, bukan portal listing generik.",
+    solution:
+      "Platform dibangun dari zero dengan filosofi 'property as lifestyle' — visual-first, data-rich, dan mobile-optimized. Backend Next.js API + PostgreSQL untuk real-time availability. UI menggunakan sistem desain yang terinspirasi dari platform luxury real estate internasional.",
+    results: [
+      "Platform live dengan 120+ premium listings",
+      "Avg inquiry-to-viewing conversion 28%",
+      "Mobile traffic accounts for 68% of sessions",
+      "Featured in Bali-based property investor community",
+    ],
+    animation: "property",
+  },
+];
+
+export const PLACEHOLDERS: ProjectPlaceholder[] = [
+  {
+    id: "placeholder-saas",
+    title: "SaaS Dashboard",
+    subtitle: "Analytics Platform",
+    color: "rgba(14,207,223,0.08)",
+    status: "In Progress",
+  },
+  {
+    id: "placeholder-mobile",
+    title: "Mobile Experience",
+    subtitle: "React Native App",
+    color: "rgba(74,122,255,0.08)",
+    status: "Under Wraps",
   },
 ];
 

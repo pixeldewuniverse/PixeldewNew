@@ -1,3 +1,3 @@
 :HL["/_next/static/chunks/0j9gjfu4bgcow.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Press+Start+2P&family=League+Spartan:wght@400;500;600;700&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"ghf77ntHl4IbiHPiI3Z-4"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"B_nSzQqSxYzqISxtBfls0"}
