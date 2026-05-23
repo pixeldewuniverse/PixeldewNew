@@ -211,6 +211,53 @@ function AnimProperty({ color }: { color: string }) {
   );
 }
 
+// ── Mini animation: Bento Studio dashboard ──
+function AnimBento({ color }: { color: string }) {
+  const [tick, setTick] = useState(0);
+  const projects = ["Hanami Coffee", "Nusa Bank", "Sukha Yoga"];
+  const progress = [82, 54, 38];
+  const accent = ["#1ddd78", "#0ecfdf"];
+
+  useEffect(() => {
+    const t = setInterval(() => setTick((n) => n + 1), 1600);
+    return () => clearInterval(t);
+  }, []);
+
+  return (
+    <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", gap: "7px", padding: "14px" }}>
+      {/* KPI tiles */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "5px", flexShrink: 0 }}>
+        {["Rp 284M", "14", "7"].map((v, i) => (
+          <div key={i} style={{ background: i === tick % 3 ? `${color}14` : "rgba(255,255,255,0.03)", border: `1px solid ${i === tick % 3 ? color + "40" : "rgba(255,255,255,0.07)"}`, borderRadius: "4px", padding: "7px 8px", transition: "all 0.5s cubic-bezier(0.4,0,0.2,1)" }}>
+            <div style={{ fontSize: "10px", fontWeight: 700, color: i === tick % 3 ? color : "rgba(255,255,255,0.45)", marginBottom: "2px", transition: "color 0.5s" }}>{v}</div>
+            <div style={{ fontSize: "7px", color: "rgba(255,255,255,0.2)", fontFamily: "ui-monospace,monospace" }}>{["Revenue","Projects","Inbox"][i]}</div>
+          </div>
+        ))}
+      </div>
+      {/* Project list */}
+      <div style={{ flex: 1, background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "4px", padding: "9px 10px", display: "flex", flexDirection: "column", justifyContent: "space-around", overflow: "hidden" }}>
+        {projects.map((proj, i) => {
+          const c = i === 0 ? color : accent[i - 1];
+          return (
+            <div key={proj} style={{ display: "flex", alignItems: "center", gap: "7px" }}>
+              <div style={{ width: "14px", height: "14px", borderRadius: "3px", background: `${c}18`, border: `1px solid ${c}25`, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: "5px", height: "5px", borderRadius: "1px", background: `${c}70` }} />
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: "8px", color: "rgba(255,255,255,0.55)", marginBottom: "3px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{proj}</div>
+                <div style={{ height: "3px", background: "rgba(255,255,255,0.06)", borderRadius: "2px", overflow: "hidden" }}>
+                  <div style={{ height: "100%", width: `${progress[i]}%`, background: c, borderRadius: "2px", boxShadow: `0 0 4px ${c}60`, transition: "width 1s" }} />
+                </div>
+              </div>
+              <span style={{ fontSize: "7px", color: "rgba(255,255,255,0.25)", fontFamily: "ui-monospace,monospace", flexShrink: 0 }}>{progress[i]}%</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ── Project Card ──
 function ProjectCard({ project, index, visible }: { project: Project; index: number; visible: boolean }) {
   const [hovered, setHovered] = useState(false);
@@ -241,11 +288,22 @@ function ProjectCard({ project, index, visible }: { project: Project; index: num
           ))}
           <div style={{ marginLeft: "8px", flex: 1, height: "12px", background: "rgba(255,255,255,0.05)", borderRadius: "2px" }} />
         </div>
-        {/* Animation */}
-        {project.animation === "bars"     && <AnimBars     color={project.color} />}
-        {project.animation === "cards"    && <AnimCards    color={project.color} />}
-        {project.animation === "agency"   && <AnimAgency   color={project.color} />}
-        {project.animation === "property" && <AnimProperty color={project.color} />}
+        {/* Thumbnail or animation */}
+        {project.thumbnail ? (
+          <div style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={project.thumbnail} alt={project.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top left", display: "block" }} />
+            <div style={{ position: "absolute", inset: 0, background: `linear-gradient(to bottom, transparent 60%, ${project.glow})` }} />
+          </div>
+        ) : (
+          <>
+            {project.animation === "bars"     && <AnimBars     color={project.color} />}
+            {project.animation === "cards"    && <AnimCards    color={project.color} />}
+            {project.animation === "agency"   && <AnimAgency   color={project.color} />}
+            {project.animation === "property" && <AnimProperty color={project.color} />}
+            {project.animation === "bento"    && <AnimBento    color={project.color} />}
+          </>
+        )}
         {/* Corner glow */}
         <div aria-hidden="true" style={{ position: "absolute", top: "-30px", right: "-30px", width: "100px", height: "100px", borderRadius: "50%", background: `radial-gradient(circle, ${project.color}10 0%, transparent 70%)`, pointerEvents: "none" }} />
       </div>

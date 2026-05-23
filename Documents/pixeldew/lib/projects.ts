@@ -17,7 +17,8 @@ export interface Project {
   challenge: string;
   solution: string;
   results: string[];
-  animation: "bars" | "cards" | "agency" | "property";
+  animation: "bars" | "cards" | "agency" | "property" | "bento";
+  thumbnail?: string;
 }
 
 export interface ProjectPlaceholder {
@@ -58,6 +59,7 @@ export const PROJECTS: Project[] = [
       "Zero training required for daily use",
     ],
     animation: "bars",
+    thumbnail: "/thumbnails/kadobajo.png",
   },
   {
     id: "gripiz-kuta",
@@ -88,6 +90,7 @@ export const PROJECTS: Project[] = [
       "Brand identity extended to menus & signage",
     ],
     animation: "cards",
+    thumbnail: "/thumbnails/gripiz-kuta.png",
   },
   {
     id: "maharani-digital-hub",
@@ -118,6 +121,7 @@ export const PROJECTS: Project[] = [
       "3 enterprise clients onboarded from organic traffic",
     ],
     animation: "agency",
+    thumbnail: "/thumbnails/maharani-digital-hub.png",
   },
   {
     id: "dewata-home-living",
@@ -148,6 +152,37 @@ export const PROJECTS: Project[] = [
       "Featured in Bali-based property investor community",
     ],
     animation: "property",
+    thumbnail: "/thumbnails/dewata-home-living.png",
+  },
+  {
+    id: "lp-pixel",
+    slug: "lp-pixel",
+    title: "LP Pixel",
+    subtitle: "Bento Dashboard & UI Design",
+    description:
+      "Platform manajemen studio kreatif dengan bento-grid dashboard, multi-palette theming, dan kampanye tracking dengan dual-brand design system.",
+    longDescription:
+      "LP Pixel adalah proyek eksplorasi desain interaktif yang menggabungkan dua deliverable utama: studio management dashboard bergaya bento-grid, dan sistem kampanye marketing dengan dua identitas visual yang kontras.\n\nBento Dashboard dirancang untuk kreator dan studio kecil — bukan spreadsheet membosankan, tapi workspace yang terasa premium. Bento grid layout memungkinkan informasi padat tersaji tanpa noise: revenue sparkline, project tracker, deadline alert, dan client roster dalam satu pandang.\n\nCampaign Detail hadir dalam dua bahasa visual: Kadobajo yang warm-editorial dengan typografi Fraunces dan palette terracotta, serta Zodiac Bajo yang mystical-dark dengan estetika premium. Keduanya hidup dalam satu design canvas yang bisa di-zoom dan di-navigate seperti Figma.\n\nSeluruh UI dibangun dengan vanilla React + custom component library — tidak ada framework berat, tidak ada template. Pure design engineering.",
+    tags: ["UI Design", "Dashboard", "Design System", "Prototyping"],
+    color: "#f59e0b",
+    glow: "rgba(245,158,11,0.12)",
+    featured: true,
+    year: "2025",
+    role: "UI Designer & Frontend Engineer",
+    duration: "5 weeks",
+    deliverables: ["Bento Dashboard UI", "Campaign Design System", "Multi-palette Theming", "Interactive Prototype"],
+    challenge:
+      "Klien membutuhkan dua hal yang sering bertentangan: dashboard yang information-dense namun tidak overwhelming, dan design system yang cukup fleksibel untuk dua brand dengan kepribadian visual yang berlawanan — satu warm/editorial, satu lagi dark/mystical.",
+    solution:
+      "Bento grid memecah informasi menjadi tile-tile mandiri yang bisa dikonsumsi secara non-linear. Untuk design system ganda, kami membuat token layer yang abstrak — warna, typografi, dan spacing bisa di-swap per brand tanpa menyentuh komponen. Prototype dibangun langsung di browser untuk validasi real-time.",
+    results: [
+      "Dashboard prototype approved in first review",
+      "2 distinct brand systems from one component library",
+      "4 color palettes switchable without code changes",
+      "Interactive canvas shipped as live demo",
+    ],
+    animation: "bento",
+    thumbnail: "/thumbnails/lp-pixel.png",
   },
 ];
 
