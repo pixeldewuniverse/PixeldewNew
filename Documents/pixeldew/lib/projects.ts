@@ -18,6 +18,7 @@ export interface Project {
   solution: string;
   results: string[];
   animation: "bars" | "cards" | "agency" | "property" | "bento";
+  thumbnail?: string;
 }
 
 export interface ProjectPlaceholder {
@@ -58,6 +59,7 @@ export const PROJECTS: Project[] = [
       "Zero training required for daily use",
     ],
     animation: "bars",
+    thumbnail: "/thumbnails/kadobajo.png",
   },
   {
     id: "gripiz-kuta",
@@ -88,6 +90,7 @@ export const PROJECTS: Project[] = [
       "Brand identity extended to menus & signage",
     ],
     animation: "cards",
+    thumbnail: "/thumbnails/gripiz-kuta.png",
   },
   {
     id: "maharani-digital-hub",
@@ -118,6 +121,7 @@ export const PROJECTS: Project[] = [
       "3 enterprise clients onboarded from organic traffic",
     ],
     animation: "agency",
+    thumbnail: "/thumbnails/maharani-digital-hub.png",
   },
   {
     id: "dewata-home-living",
@@ -148,6 +152,7 @@ export const PROJECTS: Project[] = [
       "Featured in Bali-based property investor community",
     ],
     animation: "property",
+    thumbnail: "/thumbnails/dewata-home-living.png",
   },
   {
     id: "lp-pixel",
@@ -177,6 +182,7 @@ export const PROJECTS: Project[] = [
       "Interactive canvas shipped as live demo",
     ],
     animation: "bento",
+    thumbnail: "/thumbnails/lp-pixel.png",
   },
 ];
 

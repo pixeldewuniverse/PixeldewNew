@@ -293,12 +293,22 @@ export default function ProjectDetail({ project, nextProject }: Props) {
             ))}
             <div style={{ marginLeft: "12px", flex: 1, height: "14px", background: "rgba(255,255,255,0.05)", borderRadius: "3px" }} />
           </div>
-          <div style={{ height: "400px" }}>
-            {project.animation === "bars"     && <AnimBars     color={project.color} />}
-            {project.animation === "cards"    && <AnimCards    color={project.color} />}
-            {project.animation === "agency"   && <AnimAgency   color={project.color} />}
-            {project.animation === "property" && <AnimProperty color={project.color} />}
-            {project.animation === "bento"    && <AnimBento    color={project.color} />}
+          <div style={{ height: "400px", overflow: "hidden", position: "relative" }}>
+            {project.thumbnail ? (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={project.thumbnail} alt={project.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top left", display: "block" }} />
+                <div style={{ position: "absolute", inset: 0, background: `linear-gradient(to bottom, transparent 50%, rgba(8,0,18,0.6))` }} />
+              </>
+            ) : (
+              <>
+                {project.animation === "bars"     && <AnimBars     color={project.color} />}
+                {project.animation === "cards"    && <AnimCards    color={project.color} />}
+                {project.animation === "agency"   && <AnimAgency   color={project.color} />}
+                {project.animation === "property" && <AnimProperty color={project.color} />}
+                {project.animation === "bento"    && <AnimBento    color={project.color} />}
+              </>
+            )}
           </div>
         </div>
       </section>

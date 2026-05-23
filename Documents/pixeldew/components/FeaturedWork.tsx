@@ -288,12 +288,22 @@ function ProjectCard({ project, index, visible }: { project: Project; index: num
           ))}
           <div style={{ marginLeft: "8px", flex: 1, height: "12px", background: "rgba(255,255,255,0.05)", borderRadius: "2px" }} />
         </div>
-        {/* Animation */}
-        {project.animation === "bars"     && <AnimBars     color={project.color} />}
-        {project.animation === "cards"    && <AnimCards    color={project.color} />}
-        {project.animation === "agency"   && <AnimAgency   color={project.color} />}
-        {project.animation === "property" && <AnimProperty color={project.color} />}
-        {project.animation === "bento"    && <AnimBento    color={project.color} />}
+        {/* Thumbnail or animation */}
+        {project.thumbnail ? (
+          <div style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={project.thumbnail} alt={project.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top left", display: "block" }} />
+            <div style={{ position: "absolute", inset: 0, background: `linear-gradient(to bottom, transparent 60%, ${project.glow})` }} />
+          </div>
+        ) : (
+          <>
+            {project.animation === "bars"     && <AnimBars     color={project.color} />}
+            {project.animation === "cards"    && <AnimCards    color={project.color} />}
+            {project.animation === "agency"   && <AnimAgency   color={project.color} />}
+            {project.animation === "property" && <AnimProperty color={project.color} />}
+            {project.animation === "bento"    && <AnimBento    color={project.color} />}
+          </>
+        )}
         {/* Corner glow */}
         <div aria-hidden="true" style={{ position: "absolute", top: "-30px", right: "-30px", width: "100px", height: "100px", borderRadius: "50%", background: `radial-gradient(circle, ${project.color}10 0%, transparent 70%)`, pointerEvents: "none" }} />
       </div>

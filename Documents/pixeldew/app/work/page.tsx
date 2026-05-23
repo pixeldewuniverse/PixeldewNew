@@ -241,11 +241,21 @@ export default function WorkPage() {
                     ))}
                     <div style={{ marginLeft: "8px", flex: 1, height: "12px", background: "rgba(255,255,255,0.05)", borderRadius: "2px" }} />
                   </div>
-                  {p.animation === "bars"     && <AnimBars     color={p.color} />}
-                  {p.animation === "cards"    && <AnimCards    color={p.color} />}
-                  {p.animation === "agency"   && <AnimAgency   color={p.color} />}
-                  {p.animation === "property" && <AnimProperty color={p.color} />}
-                  {p.animation === "bento"    && <AnimBento    color={p.color} />}
+                  {p.thumbnail ? (
+                    <div style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={p.thumbnail} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top left", display: "block" }} />
+                      <div style={{ position: "absolute", inset: 0, background: `linear-gradient(to bottom, transparent 60%, ${p.glow})` }} />
+                    </div>
+                  ) : (
+                    <>
+                      {p.animation === "bars"     && <AnimBars     color={p.color} />}
+                      {p.animation === "cards"    && <AnimCards    color={p.color} />}
+                      {p.animation === "agency"   && <AnimAgency   color={p.color} />}
+                      {p.animation === "property" && <AnimProperty color={p.color} />}
+                      {p.animation === "bento"    && <AnimBento    color={p.color} />}
+                    </>
+                  )}
                 </div>
 
                 {/* Info card */}
