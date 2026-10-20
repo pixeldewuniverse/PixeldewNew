@@ -14,17 +14,26 @@ export default function PixelDewLogo({ size = 40, showText = true, className = "
       className={className}
       aria-label="PixelDew"
     >
-      {/* Drop / icon mark */}
+      {/* Monogram P — per Brand Guideline O3 */}
       <g transform="translate(50 50) scale(0.44) translate(-100 -100)">
-        {/* Main drop shape */}
-        <path
-          d="M100 18 C 100 18, 142 70, 158 110 A 60 60 0 1 1 42 110 C 58 70, 100 18, 100 18 Z"
-          fill="#1ddd78"
-        />
-        {/* Pixel bite — dark square cutout */}
-        <rect x="118" y="42" width="28" height="28" fill="#080012" />
-        {/* Pixel accent dot */}
-        <rect x="148" y="20" width="14" height="14" fill="#1ddd78" />
+        {/* Main P shape (22u wide, 64u tall) */}
+        <g>
+          {/* P stem */}
+          <rect x="60" y="18" width="14" height="92" fill="#1DDD78" />
+          {/* P bowl — drop shape */}
+          <path
+            d="M74 28 Q 100 28, 100 60 Q 100 92, 74 92 L74 28 Z"
+            fill="#1DDD78"
+          />
+          {/* Drop cutout inside bowl */}
+          <path
+            d="M82 40 C 82 40, 105 72, 115 105 A 42 42 0 1 1 50 105 C 60 72, 82 40, 82 40 Z"
+            fill="#08002"
+          />
+        </g>
+
+        {/* Pixel jatuh — 6u square, 14u below P */}
+        <rect x="60" y="118" width="14" height="14" fill="#1DDD78" />
       </g>
 
       {showText && (
@@ -33,16 +42,16 @@ export default function PixelDewLogo({ size = 40, showText = true, className = "
           <text
             x="106"
             y="62"
-            fontFamily='"Press Start 2P", monospace'
-            fontSize="26"
-            fill="#1ddd78"
+            fontFamily='"League Spartan", sans-serif'
+            fontSize="32"
+            fontWeight="700"
+            fill="#F5F3FA"
             letterSpacing="2"
-            style={{ textShadow: "0 0 16px rgba(29,221,120,0.5)" }}
           >
             PixelDew
           </text>
-          {/* Tagline dot */}
-          <circle cx="96" cy="56" r="3" fill="#0ecfdf" opacity="0.7" />
+          {/* Tagline accent */}
+          <circle cx="96" cy="56" r="3" fill="#0ECFDF" opacity="0.8" />
         </>
       )}
     </svg>

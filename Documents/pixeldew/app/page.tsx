@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import FeaturedWork from "@/components/FeaturedWork";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import DewbitChat from "@/components/DewbitChat";
 import Loader from "@/components/Loader";
@@ -39,8 +38,6 @@ export default function Home() {
       <div className="section-reveal s2"><Skills /></div>
       <div className="divider" />
       <div className="section-reveal s3"><FeaturedWork /></div>
-      <div className="divider" />
-      <div className="section-reveal s4"><Contact /></div>
       <Footer />
       <DewbitChat />
       <BackgroundMusic />
