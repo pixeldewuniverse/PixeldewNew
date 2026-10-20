@@ -11,7 +11,7 @@ const CODE_LINES = [
   { tokens: [{ t: "keyword", v: "const" }, { t: "default", v: " " }, { t: "var", v: "studio" }, { t: "default", v: " = " }, { t: "fn", v: "createStudio" }, { t: "default", v: "({" }] },
   { tokens: [{ t: "default", v: "  " }, { t: "var", v: "name" }, { t: "default", v: ": " }, { t: "string", v: '"PixelDew Universe"' }, { t: "default", v: "," }] },
   { tokens: [{ t: "default", v: "  " }, { t: "var", v: "mode" }, { t: "default", v: ": " }, { t: "string", v: '"autonomous"' }, { t: "default", v: "," }] },
-  { tokens: [{ t: "default", v: "  " }, { t: "var", v: "palette" }, { t: "default", v: ": [" }, { t: "string", v: '"#2CFF8F"' }, { t: "default", v: ", " }, { t: "string", v: '"#18E6FF"' }, { t: "default", v: ", " }, { t: "string", v: '"#FF3BD4"' }, { t: "default", v: "]," }] },
+  { tokens: [{ t: "default", v: "  " }, { t: "var", v: "palette" }, { t: "default", v: ": [" }, { t: "string", v: '"#1DDD78"' }, { t: "default", v: ", " }, { t: "string", v: '"#0ECFDF"' }, { t: "default", v: ", " }, { t: "string", v: '"#E02CB8"' }, { t: "default", v: "]," }] },
   { tokens: [{ t: "default", v: "});" }] },
   { tokens: [] },
   { tokens: [{ t: "comment", v: "// Boot the Dewbit agent 🌱" }] },
@@ -78,16 +78,16 @@ export default function CodePanel() {
           >
             {/* Traffic lights */}
             <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full" style={{ background: "#FF3BD4" }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: "#E02CB8" }} />
               <div className="w-3 h-3 rounded-full" style={{ background: "#FFD166" }} />
-              <div className="w-3 h-3 rounded-full" style={{ background: "#2CFF8F" }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: "#1DDD78" }} />
             </div>
-            <span className="font-pixel opacity-40" style={{ fontSize: "8px", color: "#18E6FF" }}>
+            <span className="font-pixel opacity-40" style={{ fontSize: "8px", color: "#0ECFDF" }}>
               dewbit.agent.ts
             </span>
             <div className="ml-auto flex items-center gap-2 opacity-40">
-              <div className="w-2 h-2" style={{ background: "#2CFF8F" }} />
-              <span className="font-pixel" style={{ fontSize: "7px", color: "#2CFF8F" }}>RUNNING</span>
+              <div className="w-2 h-2" style={{ background: "#1DDD78" }} />
+              <span className="font-pixel" style={{ fontSize: "7px", color: "#1DDD78" }}>RUNNING</span>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export default function CodePanel() {
                   <span className="select-none mr-4 text-right w-6 opacity-30" style={{ color: "#5a5f80", fontSize: "11px" }}>
                     {CODE_LINES.length + 1}
                   </span>
-                  <span className="cursor-blink" style={{ color: "#2CFF8F", fontSize: "12px" }}>█</span>
+                  <span className="cursor-blink" style={{ color: "#1DDD78", fontSize: "12px" }}>█</span>
                 </div>
               </div>
             </div>
@@ -125,10 +125,10 @@ export default function CodePanel() {
             style={{ borderColor: "rgba(44,255,143,0.15)", background: "rgba(0,0,0,0.3)" }}
           >
             {[
-              { label: "TypeScript", color: "#5B8CFF" },
-              { label: "Next.js 15", color: "#18E6FF" },
-              { label: "TailwindCSS", color: "#2CFF8F" },
-              { label: "Framer Motion", color: "#FF3BD4" },
+              { label: "TypeScript", color: "#4a7aff" },
+              { label: "Next.js 15", color: "#0ECFDF" },
+              { label: "TailwindCSS", color: "#1DDD78" },
+              { label: "Framer Motion", color: "#E02CB8" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-1.5 flex-shrink-0">
                 <div className="w-2 h-2 rounded-sm" style={{ background: item.color }} />

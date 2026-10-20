@@ -6,32 +6,36 @@
 
 /* ── Variables ── */
 :root {
-  /* Backgrounds */
-  --bg:        #080012;
-  --bg2:       #0e0018;
-  --bg-glass:  rgba(15, 15, 25, 0.75);
+  /* Backgrounds — per brand guideline O7 (85/10/4/1) */
+  --bg:        #08002;   /* 85% - bg */
+  --bg2:       #0a0010;
+  --bg-glass:  rgba(8, 0, 18, 0.85);
+
+  /* Surfaces */
+  --surface:   #41226;   /* 10% - surface-raised */
+
+  /* Text — ink */
+  --ink:       #F5F3FA;  /* 4% - white text */
+  --text:      #F5F3FA;  /* alias */
+  --text-dim:  rgba(245,243,250,0.55);
+  --text-muted:#A6A2B8;  /* 1% - ink-muted */
 
   /* Accents — PixelDew */
-  --mint:      #1ddd78;
+  --mint:      #1DDD78;  /* Primary green */
   --mint-dim:  rgba(29,221,120,0.1);
-  --cyan:      #0ecfdf;
+  --cyan:      #0ECFDF;  /* Secondary accent */
   --cyan-dim:  rgba(14,207,223,0.08);
-  --blue:      #4a7aff;
-  --magenta:   #e02cb8;
+  --magenta:   #E02CB8;  /* Pop accent */
 
-  /* Wearebrand accent roles */
+  /* Legacy accents (keep for game compatibility) */
+  --blue:      #4a7aff;
   --coral:     #FF6B6B;
   --teal:      #2BB9A3;
   --success:   #1BA64B;
 
-  /* Text */
-  --text:      #ffffff;
-  --text-dim:  rgba(255,255,255,0.55);
-  --text-muted:rgba(255,255,255,0.28);
-
   /* Borders */
-  --border:    rgba(255,255,255,0.1);
-  --border-alt:rgba(255,255,255,0.15);
+  --border:    rgba(245,243,250,0.08);
+  --border-alt:rgba(245,243,250,0.12);
 
   /* Shadows */
   --shadow-sm: 0px 8px 32px rgba(0,0,0,0.4), 0px 0px 80px rgba(43,185,163,0.06);
@@ -292,7 +296,7 @@ section {
 .hero-flash {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #1ddd78, #0ecfdf);
+  background: linear-gradient(135deg, #1DDD78, #0ECFDF);
   opacity: 0;
   pointer-events: none;
   z-index: 10;

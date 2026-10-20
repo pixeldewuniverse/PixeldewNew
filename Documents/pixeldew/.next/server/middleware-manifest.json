@@ -10,15 +10,15 @@
         "required-server-files.js",
         "server/server-reference-manifest.js",
         "server/app/opengraph-image/route_client-reference-manifest.js",
-        "server/edge/chunks/13y1_pixeldew__next-internal_server_app_opengraph-image_route_actions_0kzakt6.js",
-        "server/edge/chunks/0d8k_next_dist_esm_109bqa4._.js",
-        "server/edge/chunks/[root-of-the-server]__0gw39tq._.js",
-        "server/edge/chunks/0d8k_next_dist_compiled_@vercel_og_0knlwy_._.js",
-        "server/edge/chunks/0n7~_next_dist_esm_build_templates_edge-wrapper_0g~pxh9.js"
+        "server/edge/chunks/_next-internal_server_app_opengraph-image_route_actions_064c5ks.js",
+        "server/edge/chunks/node_modules_next_dist_esm_0u5k_dj._.js",
+        "server/edge/chunks/[root-of-the-server]__01rmks4._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_11csqje._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_13_vdjg.js"
       ],
       "name": "app/opengraph-image/route",
       "page": "/opengraph-image/route",
-      "entrypoint": "server/edge/chunks/0n7~_next_dist_esm_build_templates_edge-wrapper_0g~pxh9.js",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_13_vdjg.js",
       "matchers": [
         {
           "regexp": "^/opengraph-image(?:/)?$",
@@ -28,11 +28,11 @@
       "wasm": [
         {
           "name": "wasm_10a187050363648b49a36c79d5266d2c",
-          "filePath": "server/edge/chunks/0d8k_next_dist_compiled_@vercel_og_yoga_0656eb_.wasm"
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0656eb_.wasm"
         },
         {
           "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
-          "filePath": "server/edge/chunks/0d8k_next_dist_compiled_@vercel_og_resvg_0656eb_.wasm"
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0656eb_.wasm"
         }
       ],
       "assets": [
@@ -42,11 +42,11 @@
         }
       ],
       "env": {
-        "__NEXT_BUILD_ID": "4Q6vQvb64OBQREOmcfvfO",
-        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "xV6LnIKkcqiH3TPozB9t+Q6NCPwgVRYdFWp6sBMhzhg=",
-        "__NEXT_PREVIEW_MODE_ID": "d7583e7561db995b8277a94675a59d83",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "f7d41e1458a6d9f7cd1ba173975e7e11f78120538e710fec18d4eb463fb5a572",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "047f853b5bc6b63b76fbeaae852b40d9e48940c0e4691db000d187ff23f5a62f"
+        "__NEXT_BUILD_ID": "ds5yT7nwcz8ObDPbD0qcy",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "H8Dx5uxV8mF2TauCI5wOnP5yg30EY763yPwlIcCgH/o=",
+        "__NEXT_PREVIEW_MODE_ID": "33b7fcd1dbb63488d7e3bf783787875b",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "90a7f40b19733c02a3c5a98bf69fc268b4ab15386b0e1c20c3f2505844bb4ba2",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "b1eb939ad5454059599f0a5f8ed5eef8f2951f85d25ffd902d394a2fac8b3f97"
       }
     }
   }

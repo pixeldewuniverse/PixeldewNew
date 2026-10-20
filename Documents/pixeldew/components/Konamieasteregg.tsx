@@ -121,8 +121,8 @@ export default function KonamiEasterEgg() {
           {KONAMI.map((_, i) => (
             <div key={i} style={{
               width: 6, height: 6,
-              background: i < progress ? "#2CFF8F" : "rgba(255,255,255,0.15)",
-              boxShadow: i < progress ? "0 0 6px #2CFF8F" : "none",
+              background: i < progress ? "#1DDD78" : "rgba(255,255,255,0.15)",
+              boxShadow: i < progress ? "0 0 6px #1DDD78" : "none",
               transition: "all 0.15s",
             }} />
           ))}
@@ -168,7 +168,7 @@ export default function KonamiEasterEgg() {
             style={{
               position: "fixed", top: 16, right: 16,
               background: "transparent", border: "1px solid rgba(255,59,212,0.4)",
-              color: "#FF3BD4", fontSize: "8px", padding: "6px 12px",
+              color: "#E02CB8", fontSize: "8px", padding: "6px 12px",
               cursor: "pointer", zIndex: 2, letterSpacing: "0.1em",
             }}
           >
@@ -183,10 +183,10 @@ export default function KonamiEasterEgg() {
                 {bootLines.map((line, i) => (
                   <div key={i} style={{
                     fontSize: "11px", marginBottom: 8,
-                    color: i === bootLines.length - 1 ? "#2CFF8F" : "rgba(44,255,143,0.5)",
+                    color: i === bootLines.length - 1 ? "#1DDD78" : "rgba(44,255,143,0.5)",
                     animation: "fadeInLine 0.2s ease",
                   }}>
-                    {line}{i === bootLines.length - 1 && <span style={{ color: "#2CFF8F" }}>_</span>}
+                    {line}{i === bootLines.length - 1 && <span style={{ color: "#1DDD78" }}>_</span>}
                   </div>
                 ))}
               </div>
@@ -198,8 +198,8 @@ export default function KonamiEasterEgg() {
                 {/* Header */}
                 <div className="text-center mb-10">
                   <div className="font-pixel mb-2" style={{
-                    fontSize: "clamp(10px, 2.5vw, 16px)", color: "#2CFF8F",
-                    textShadow: "0 0 30px #2CFF8F, 0 0 60px #2CFF8F55",
+                    fontSize: "clamp(10px, 2.5vw, 16px)", color: "#1DDD78",
+                    textShadow: "0 0 30px #1DDD78, 0 0 60px #1DDD7855",
                     letterSpacing: "0.25em",
                   }}>
                     ★ SECRET ZONE ★
@@ -250,7 +250,7 @@ export default function KonamiEasterEgg() {
                       }}
                     >
                       <div style={{ fontSize: 20, marginBottom: 8 }}>{s.icon}</div>
-                      <div className="font-pixel mb-2" style={{ fontSize: "8px", color: "#2CFF8F", lineHeight: 1.6 }}>
+                      <div className="font-pixel mb-2" style={{ fontSize: "8px", color: "#1DDD78", lineHeight: 1.6 }}>
                         {s.title}
                       </div>
                       <div style={{ fontSize: "10px", color: "rgba(232,224,255,0.45)", lineHeight: 1.6 }}>

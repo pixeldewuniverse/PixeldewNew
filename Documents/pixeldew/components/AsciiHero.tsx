@@ -55,7 +55,7 @@ export default function AsciiHero() {
           className="font-pixel glow-mint"
           style={{
             fontSize: "clamp(18px, 7vw, 32px)",
-            color: "#2CFF8F",
+            color: "#1DDD78",
             letterSpacing: "0.15em",
             lineHeight: "1.5",
           }}
@@ -83,7 +83,7 @@ export default function AsciiHero() {
         {/* Cursor blink */}
         <span
           className="inline-block mt-1 cursor-blink font-pixel"
-          style={{ color: "#2CFF8F", fontSize: "10px" }}
+          style={{ color: "#1DDD78", fontSize: "10px" }}
           aria-hidden="true"
         >
           _
@@ -96,7 +96,7 @@ export default function AsciiHero() {
           href="#"
           className="btn-primary font-pixel px-8 py-4 rounded-none"
           style={{
-            background: "linear-gradient(135deg, #2CFF8F 0%, #18E6FF 100%)",
+            background: "linear-gradient(135deg, #1DDD78 0%, #0ECFDF 100%)",
             color: "#080018",
             fontSize: "10px",
             letterSpacing: "0.1em",
@@ -110,7 +110,7 @@ export default function AsciiHero() {
           className="btn-outline font-pixel px-8 py-4 rounded-none border"
           style={{
             borderColor: "rgba(91,140,255,0.5)",
-            color: "#5B8CFF",
+            color: "#4a7aff",
             fontSize: "10px",
             letterSpacing: "0.1em",
           }}

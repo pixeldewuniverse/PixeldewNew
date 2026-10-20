@@ -39,13 +39,13 @@ export default function GeneratorBanner() {
             fontSize: 7, padding: "2px 7px",
             background: "rgba(44,255,143,0.15)",
             border: "1px solid rgba(44,255,143,0.4)",
-            color: "#2CFF8F", letterSpacing: "0.1em",
+            color: "#1DDD78", letterSpacing: "0.1em",
             whiteSpace: "nowrap",
           }}>NEW</span>
           <span style={{ fontSize: 12, color: "rgba(232,224,255,0.65)" }}>
             ✦ AI Website Generator — describe your site, get full HTML instantly
           </span>
-          <span style={{ fontSize: 12, color: "#2CFF8F", whiteSpace: "nowrap" }}>
+          <span style={{ fontSize: 12, color: "#1DDD78", whiteSpace: "nowrap" }}>
             Try it →
           </span>
         </Link>

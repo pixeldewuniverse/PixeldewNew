@@ -17,7 +17,7 @@ export default function CornerCallout() {
         <button
           onClick={() => setDismissed(true)}
           className="absolute top-2 right-3 opacity-30 hover:opacity-70 transition-opacity font-pixel"
-          style={{ fontSize: "8px", color: "#2CFF8F" }}
+          style={{ fontSize: "8px", color: "#1DDD78" }}
           aria-label="Dismiss"
         >
           ✕
@@ -42,11 +42,11 @@ export default function CornerCallout() {
               style={{ fontSize: "8px", color: "rgba(232,224,255,0.9)", lineHeight: "1.8" }}
             >
               PixelDew builds the{" "}
-              <span className="underline-mint" style={{ color: "#2CFF8F" }}>
+              <span className="underline-mint" style={{ color: "#1DDD78" }}>
                 bits
               </span>{" "}
               you don&apos;t want to{" "}
-              <span className="underline-mint" style={{ color: "#18E6FF" }}>
+              <span className="underline-mint" style={{ color: "#0ECFDF" }}>
                 build.
               </span>
             </p>
@@ -55,7 +55,7 @@ export default function CornerCallout() {
               className="mt-3 inline-block font-pixel"
               style={{
                 fontSize: "7px",
-                color: "#2CFF8F",
+                color: "#1DDD78",
                 textDecoration: "underline",
                 textUnderlineOffset: "3px",
               }}
