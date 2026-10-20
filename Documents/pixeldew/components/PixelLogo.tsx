@@ -9,26 +9,26 @@ export default function PixelLogo({ size = 28 }: { size?: number }) {
       aria-label="PixelDew Logo"
     >
       {/* Pixel grid logo — stylized "PD" in blocky pixels */}
-      <rect x="2" y="2" width="4" height="4" fill="#2CFF8F" />
-      <rect x="6" y="2" width="4" height="4" fill="#2CFF8F" />
-      <rect x="10" y="2" width="4" height="4" fill="#2CFF8F" />
-      <rect x="2" y="6" width="4" height="4" fill="#2CFF8F" />
-      <rect x="10" y="6" width="4" height="4" fill="#18E6FF" />
-      <rect x="2" y="10" width="4" height="4" fill="#2CFF8F" />
-      <rect x="6" y="10" width="4" height="4" fill="#2CFF8F" />
-      <rect x="10" y="10" width="4" height="4" fill="#2CFF8F" />
+      <rect x="2" y="2" width="4" height="4" fill="#1DDD78" />
+      <rect x="6" y="2" width="4" height="4" fill="#1DDD78" />
+      <rect x="10" y="2" width="4" height="4" fill="#1DDD78" />
+      <rect x="2" y="6" width="4" height="4" fill="#1DDD78" />
+      <rect x="10" y="6" width="4" height="4" fill="#0ECFDF" />
+      <rect x="2" y="10" width="4" height="4" fill="#1DDD78" />
+      <rect x="6" y="10" width="4" height="4" fill="#1DDD78" />
+      <rect x="10" y="10" width="4" height="4" fill="#1DDD78" />
       {/* right column — D shape */}
-      <rect x="16" y="2" width="4" height="4" fill="#5B8CFF" />
-      <rect x="20" y="2" width="4" height="4" fill="#5B8CFF" />
-      <rect x="16" y="6" width="4" height="4" fill="#5B8CFF" />
-      <rect x="24" y="6" width="4" height="4" fill="#18E6FF" />
-      <rect x="16" y="10" width="4" height="4" fill="#5B8CFF" />
-      <rect x="20" y="10" width="4" height="4" fill="#5B8CFF" />
+      <rect x="16" y="2" width="4" height="4" fill="#4a7aff" />
+      <rect x="20" y="2" width="4" height="4" fill="#4a7aff" />
+      <rect x="16" y="6" width="4" height="4" fill="#4a7aff" />
+      <rect x="24" y="6" width="4" height="4" fill="#0ECFDF" />
+      <rect x="16" y="10" width="4" height="4" fill="#4a7aff" />
+      <rect x="20" y="10" width="4" height="4" fill="#4a7aff" />
       {/* bottom row accent */}
-      <rect x="2" y="22" width="4" height="4" fill="#FF3BD4" opacity="0.7" />
-      <rect x="8" y="22" width="4" height="4" fill="#2CFF8F" opacity="0.5" />
-      <rect x="14" y="22" width="4" height="4" fill="#18E6FF" opacity="0.5" />
-      <rect x="20" y="22" width="4" height="4" fill="#5B8CFF" opacity="0.7" />
+      <rect x="2" y="22" width="4" height="4" fill="#E02CB8" opacity="0.7" />
+      <rect x="8" y="22" width="4" height="4" fill="#1DDD78" opacity="0.5" />
+      <rect x="14" y="22" width="4" height="4" fill="#0ECFDF" opacity="0.5" />
+      <rect x="20" y="22" width="4" height="4" fill="#4a7aff" opacity="0.7" />
     </svg>
   );
 }

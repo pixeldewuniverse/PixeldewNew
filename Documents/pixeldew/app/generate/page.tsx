@@ -97,7 +97,7 @@ export default function GeneratePage() {
           <div style={{ width: 28, height: 28, position: "relative" }}>
             <Image src="/dewbit.png" alt="Dewbit" fill style={{ objectFit: "contain" }} />
           </div>
-          <span className="font-pixel" style={{ fontSize: "9px", color: "#2CFF8F", letterSpacing: "0.15em" }}>
+          <span className="font-pixel" style={{ fontSize: "9px", color: "#1DDD78", letterSpacing: "0.15em" }}>
             PIXELDEW
           </span>
         </Link>
@@ -109,7 +109,7 @@ export default function GeneratePage() {
             fontSize: "7px", padding: "3px 8px",
             background: "rgba(44,255,143,0.08)",
             border: "1px solid rgba(44,255,143,0.25)",
-            color: "#2CFF8F",
+            color: "#1DDD78",
           }} className="font-pixel">
             BETA
           </span>
@@ -121,8 +121,8 @@ export default function GeneratePage() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div className="font-pixel" style={{
-            fontSize: "clamp(11px, 2.5vw, 18px)", color: "#2CFF8F",
-            textShadow: "0 0 30px #2CFF8F55", letterSpacing: "0.15em", marginBottom: 10,
+            fontSize: "clamp(11px, 2.5vw, 18px)", color: "#1DDD78",
+            textShadow: "0 0 30px #1DDD7855", letterSpacing: "0.15em", marginBottom: 10,
           }}>
             AI Website Generator
           </div>
@@ -143,9 +143,9 @@ export default function GeneratePage() {
             padding: "8px 16px",
             display: "flex", alignItems: "center", gap: 8,
           }}>
-            <div style={{ width: 6, height: 6, background: "#FF3BD4", boxShadow: "0 0 6px #FF3BD4" }} />
+            <div style={{ width: 6, height: 6, background: "#E02CB8", boxShadow: "0 0 6px #E02CB8" }} />
             <div style={{ width: 6, height: 6, background: "#FFD166" }} />
-            <div style={{ width: 6, height: 6, background: "#2CFF8F", boxShadow: "0 0 6px #2CFF8F" }} />
+            <div style={{ width: 6, height: 6, background: "#1DDD78", boxShadow: "0 0 6px #1DDD78" }} />
             <span className="font-pixel" style={{ fontSize: "7px", color: "rgba(44,255,143,0.3)", marginLeft: 8, letterSpacing: "0.1em" }}>
               DESCRIBE YOUR SITE
             </span>
@@ -180,8 +180,8 @@ export default function GeneratePage() {
               className="font-pixel"
               style={{
                 background: prompt.trim() && stage !== "generating" ? "rgba(44,255,143,0.1)" : "transparent",
-                border: `1px solid ${prompt.trim() && stage !== "generating" ? "#2CFF8F" : "rgba(255,255,255,0.1)"}`,
-                color: prompt.trim() && stage !== "generating" ? "#2CFF8F" : "rgba(255,255,255,0.2)",
+                border: `1px solid ${prompt.trim() && stage !== "generating" ? "#1DDD78" : "rgba(255,255,255,0.1)"}`,
+                color: prompt.trim() && stage !== "generating" ? "#1DDD78" : "rgba(255,255,255,0.2)",
                 fontSize: "8px", padding: "8px 20px", cursor: prompt.trim() ? "pointer" : "default",
                 letterSpacing: "0.1em",
                 transition: "all 0.2s",
@@ -239,14 +239,14 @@ export default function GeneratePage() {
             <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-end", gap: 4, marginBottom: 20 }}>
               {[...Array(5)].map((_, i) => (
                 <div key={i} style={{
-                  width: 6, background: "#2CFF8F",
+                  width: 6, background: "#1DDD78",
                   animation: `barBounce 0.8s ease-in-out infinite`,
                   animationDelay: `${i * 0.12}s`,
-                  boxShadow: "0 0 8px #2CFF8F",
+                  boxShadow: "0 0 8px #1DDD78",
                 }} />
               ))}
             </div>
-            <div className="font-pixel" style={{ fontSize: "9px", color: "#2CFF8F", marginBottom: 8, letterSpacing: "0.15em" }}>
+            <div className="font-pixel" style={{ fontSize: "9px", color: "#1DDD78", marginBottom: 8, letterSpacing: "0.15em" }}>
               Dewbit is building your site...
             </div>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,0.3)" }}>
@@ -269,10 +269,10 @@ export default function GeneratePage() {
             padding: 20, marginBottom: 16,
             display: "flex", alignItems: "center", justifyContent: "space-between",
           }}>
-            <span style={{ fontSize: 12, color: "#FF3BD4" }}>💾 {error}</span>
+            <span style={{ fontSize: 12, color: "#E02CB8" }}>💾 {error}</span>
             <button onClick={reset} className="font-pixel" style={{
               background: "transparent", border: "1px solid rgba(255,59,212,0.4)",
-              color: "#FF3BD4", fontSize: "7px", padding: "6px 12px", cursor: "pointer",
+              color: "#E02CB8", fontSize: "7px", padding: "6px 12px", cursor: "pointer",
             }}>RETRY</button>
           </div>
         )}
@@ -290,7 +290,7 @@ export default function GeneratePage() {
               flexWrap: "wrap", gap: 8,
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <div className="font-pixel" style={{ fontSize: "7px", color: "#2CFF8F", letterSpacing: "0.1em" }}>
+                <div className="font-pixel" style={{ fontSize: "7px", color: "#1DDD78", letterSpacing: "0.1em" }}>
                   ✓ GENERATED
                 </div>
                 {tokens > 0 && (
@@ -306,7 +306,7 @@ export default function GeneratePage() {
                   style={{
                     background: "rgba(44,255,143,0.08)",
                     border: "1px solid rgba(44,255,143,0.3)",
-                    color: "#2CFF8F", fontSize: "7px", padding: "6px 14px",
+                    color: "#1DDD78", fontSize: "7px", padding: "6px 14px",
                     cursor: "pointer", letterSpacing: "0.1em",
                   }}
                 >

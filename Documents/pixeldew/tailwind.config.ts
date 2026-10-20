@@ -9,14 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "pd-bg": "#12002B",
-        "pd-bg2": "#160033",
-        "pd-mint": "#2CFF8F",
-        "pd-green": "#22D36B",
-        "pd-cyan": "#18E6FF",
-        "pd-blue": "#5B8CFF",
-        "pd-magenta": "#FF3BD4",
-        "pd-purple": "#7B2FFF",
+        "pd-bg": "#08002",
+        "pd-bg2": "#0a0010",
+        "pd-surface": "#41226",
+        "pd-ink": "#F5F3FA",
+        "pd-text-muted": "#A6A2B8",
+        "pd-mint": "#1DDD78",
+        "pd-cyan": "#0ECFDF",
+        "pd-magenta": "#E02CB8",
+        "pd-blue": "#4a7aff",
       },
       fontFamily: {
         pixel: ['"Press Start 2P"', "monospace"],
@@ -42,8 +43,8 @@ const config: Config = {
           "50%": { opacity: "0" },
         },
         glowPulse: {
-          "0%, 100%": { textShadow: "0 0 20px #2CFF8F, 0 0 40px #2CFF8F55" },
-          "50%": { textShadow: "0 0 40px #18E6FF, 0 0 80px #18E6FF55, 0 0 120px #18E6FF22" },
+          "0%, 100%": { textShadow: "0 0 20px #1DDD78, 0 0 40px #1DDD7855" },
+          "50%": { textShadow: "0 0 40px #0ECFDF, 0 0 80px #0ECFDF55, 0 0 120px #0ECFDF22" },
         },
         shimmer: {
           "0%": { backgroundPosition: "-200% center" },
@@ -55,10 +56,10 @@ const config: Config = {
         },
       },
       boxShadow: {
-        "neon-mint": "0 0 20px #2CFF8F44, 0 0 40px #2CFF8F22",
-        "neon-cyan": "0 0 20px #18E6FF44, 0 0 40px #18E6FF22",
-        "neon-blue": "0 0 20px #5B8CFF44",
-        "pixel-border": "inset 0 0 0 2px #2CFF8F33",
+        "neon-mint": "0 0 20px #1DDD7844, 0 0 40px #1DDD7822",
+        "neon-cyan": "0 0 20px #0ECFDF44, 0 0 40px #0ECFDF22",
+        "neon-blue": "0 0 20px #4a7aff44",
+        "pixel-border": "inset 0 0 0 2px #1DDD7833",
       },
     },
   },

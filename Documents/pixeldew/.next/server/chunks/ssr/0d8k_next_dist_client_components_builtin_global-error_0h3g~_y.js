@@ -1,3 +1,0 @@
-module.exports=[66274,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(59196);a.n(d("[project]/PixeldewNew/Documents/pixeldew/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},47626,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(59196);a.n(d("[project]/PixeldewNew/Documents/pixeldew/node_modules/next/dist/client/components/builtin/global-error.js"))},73776,a=>{"use strict";a.i(66274);var b=a.i(47626);a.n(b)},18379,a=>{a.n(a.i(73776))}];
-
-//# sourceMappingURL=0d8k_next_dist_client_components_builtin_global-error_0h3g~_y.js.map

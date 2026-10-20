@@ -104,7 +104,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/home/user",
+    "outputFileTracingRoot": "/home/user/PixeldewNew/Documents/pixeldew",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -304,12 +304,12 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "/home/user"
+      "root": "/home/user/PixeldewNew/Documents/pixeldew"
     },
     "distDirRoot": ".next"
   },
   "appDir": "/home/user/PixeldewNew/Documents/pixeldew",
-  "relativeAppDir": "PixeldewNew/Documents/pixeldew",
+  "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
     ".next/server/pages-manifest.json",

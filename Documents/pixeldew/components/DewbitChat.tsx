@@ -16,17 +16,17 @@ const WELCOME: Message = {
 function MascotIcon({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 22 22" fill="none" aria-hidden="true">
-      <rect x="4" y="6" width="14" height="12" fill="#160033" stroke="#2CFF8F" strokeWidth="1.5" />
-      <rect x="6" y="3" width="10" height="8"  fill="#160033" stroke="#2CFF8F" strokeWidth="1.5" />
-      <rect x="7"   y="5" width="3" height="3" fill="#18E6FF" />
-      <rect x="12"  y="5" width="3" height="3" fill="#18E6FF" />
+      <rect x="4" y="6" width="14" height="12" fill="#160033" stroke="#1DDD78" strokeWidth="1.5" />
+      <rect x="6" y="3" width="10" height="8"  fill="#160033" stroke="#1DDD78" strokeWidth="1.5" />
+      <rect x="7"   y="5" width="3" height="3" fill="#0ECFDF" />
+      <rect x="12"  y="5" width="3" height="3" fill="#0ECFDF" />
       <rect x="8.5" y="5.5" width="1.5" height="1.5" fill="white" opacity=".75" />
       <rect x="13.5" y="5.5" width="1.5" height="1.5" fill="white" opacity=".75" />
-      <rect x="8"  y="9"   width="6" height="1.5" fill="#2CFF8F" />
-      <rect x="6"  y="1"   width="2" height="3"   fill="#5B8CFF" />
-      <rect x="14" y="1"   width="2" height="3"   fill="#5B8CFF" />
-      <rect x="6.5"  y="1.5" width="1" height="2" fill="#18E6FF" opacity=".7" />
-      <rect x="14.5" y="1.5" width="1" height="2" fill="#18E6FF" opacity=".7" />
+      <rect x="8"  y="9"   width="6" height="1.5" fill="#1DDD78" />
+      <rect x="6"  y="1"   width="2" height="3"   fill="#4a7aff" />
+      <rect x="14" y="1"   width="2" height="3"   fill="#4a7aff" />
+      <rect x="6.5"  y="1.5" width="1" height="2" fill="#0ECFDF" opacity=".7" />
+      <rect x="14.5" y="1.5" width="1" height="2" fill="#0ECFDF" opacity=".7" />
     </svg>
   );
 }
@@ -42,7 +42,7 @@ function TypingDots() {
             display: "inline-block",
             width: "6px",
             height: "6px",
-            background: "#2CFF8F",
+            background: "#1DDD78",
             animation: `dewDot 1.2s ease-in-out ${i * 0.2}s infinite`,
           }}
         />
@@ -243,11 +243,11 @@ export default function DewbitChat() {
             </div>
 
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontFamily: "'Press Start 2P',monospace", fontSize: "9px", color: "#2CFF8F", letterSpacing: ".08em" }}>
+              <div style={{ fontFamily: "'Press Start 2P',monospace", fontSize: "9px", color: "#1DDD78", letterSpacing: ".08em" }}>
                 Dewbit
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "5px", marginTop: "3px" }}>
-                <span style={{ display: "inline-block", width: "6px", height: "6px", background: "#2CFF8F", borderRadius: "50%", boxShadow: "0 0 7px #2CFF8F" }} />
+                <span style={{ display: "inline-block", width: "6px", height: "6px", background: "#1DDD78", borderRadius: "50%", boxShadow: "0 0 7px #1DDD78" }} />
                 <span style={{ fontFamily: "ui-monospace,monospace", fontSize: "9px", color: "rgba(44,255,143,.5)" }}>
                   online · pixel-powered
                 </span>
@@ -356,7 +356,7 @@ export default function DewbitChat() {
               aria-label="Send"
               style={{
                 background: canSend
-                  ? "linear-gradient(135deg,#2CFF8F,#18E6FF)"
+                  ? "linear-gradient(135deg,#1DDD78,#0ECFDF)"
                   : "rgba(44,255,143,.12)",
                 border: "none",
                 color: canSend ? "#080018" : "rgba(44,255,143,.3)",
@@ -404,8 +404,8 @@ export default function DewbitChat() {
           height: "56px",
           zIndex: 9001,
           background: open
-            ? "linear-gradient(135deg,#FF3BD4,#7B2FFF)"
-            : "linear-gradient(135deg,#2CFF8F,#18E6FF)",
+            ? "linear-gradient(135deg,#E02CB8,#E02CB8)"
+            : "linear-gradient(135deg,#1DDD78,#0ECFDF)",
           border: "none",
           cursor: "pointer",
           display: "flex",
@@ -422,13 +422,13 @@ export default function DewbitChat() {
           <svg width="30" height="30" viewBox="0 0 22 22" fill="none" aria-hidden="true">
             <rect x="4"  y="6"  width="14" height="12" fill="#080018" />
             <rect x="6"  y="3"  width="10" height="8"  fill="#080018" />
-            <rect x="7.5"  y="5.5" width="2.5" height="2.5" fill="#18E6FF" />
-            <rect x="12.5" y="5.5" width="2.5" height="2.5" fill="#18E6FF" />
+            <rect x="7.5"  y="5.5" width="2.5" height="2.5" fill="#0ECFDF" />
+            <rect x="12.5" y="5.5" width="2.5" height="2.5" fill="#0ECFDF" />
             <rect x="8.5"  y="6"   width="1"   height="1"   fill="white" opacity=".8" />
             <rect x="13.5" y="6"   width="1"   height="1"   fill="white" opacity=".8" />
-            <rect x="8"    y="9"   width="6"   height="1.5" fill="#2CFF8F" />
-            <rect x="6.5"  y="1.5" width="1.5" height="2.5" fill="#5B8CFF" />
-            <rect x="14"   y="1.5" width="1.5" height="2.5" fill="#5B8CFF" />
+            <rect x="8"    y="9"   width="6"   height="1.5" fill="#1DDD78" />
+            <rect x="6.5"  y="1.5" width="1.5" height="2.5" fill="#4a7aff" />
+            <rect x="14"   y="1.5" width="1.5" height="2.5" fill="#4a7aff" />
           </svg>
         )}
 
@@ -442,7 +442,7 @@ export default function DewbitChat() {
               right: "-5px",
               width: "19px",
               height: "19px",
-              background: "#FF3BD4",
+              background: "#E02CB8",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
