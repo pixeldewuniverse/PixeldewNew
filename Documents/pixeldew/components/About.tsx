@@ -5,7 +5,7 @@ const FACTS = [
   { label: "Based in",  value: "Indonesia",     color: "var(--mint)"    },
   { label: "Focus",     value: "Web & UI/UX",   color: "var(--cyan)"    },
   { label: "Approach",  value: "Pixel perfect",  color: "var(--blue)"   },
-  { label: "Status",    value: "Open to work",  color: "var(--magenta)" },
+  { label: "Status",    value: "Open for projects", color: "var(--magenta)" },
 ];
 
 export default function About() {
@@ -40,7 +40,7 @@ export default function About() {
           </h2>
 
           <p className={`t-body-lg reveal d1 ${vis ? "in" : ""}`} style={{ color: "var(--text-dim)", marginBottom: "20px" }}>
-            Web creator dari Indonesia yang membangun produk digital dari nol — identitas visual, desain antarmuka, sampai implementasi frontend production-ready.
+            Studio digital dari Indonesia yang membangun produk digital dari nol — identitas visual, desain antarmuka, sampai implementasi frontend production-ready.
           </p>
 
           <p className={`t-body reveal d2 ${vis ? "in" : ""}`} style={{ color: "var(--text-muted)" }}>
