@@ -54,7 +54,7 @@ export default async function Image() {
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 32 }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#1ddd78", boxShadow: "0 0 8px #1ddd78" }} />
             <span style={{ fontFamily: "monospace", fontSize: 12, color: "rgba(29,221,120,0.6)", letterSpacing: "0.3em", textTransform: "uppercase" }}>
-              Portfolio 2025
+              Design · Code · Motion
             </span>
           </div>
 

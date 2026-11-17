@@ -72,7 +72,7 @@ export default function Hero() {
       >
         <div style={{ textAlign: "center", zIndex: 1 }}>
           <div className="t-label" style={{ color: "rgba(29,221,120,0.5)", marginBottom: "24px" }}>
-            Portfolio 2025
+            Design · Code · Motion
           </div>
           <h1 className="t-display glow-mint" style={{ color: "var(--mint)", marginBottom: "16px" }}>
             PixelDew

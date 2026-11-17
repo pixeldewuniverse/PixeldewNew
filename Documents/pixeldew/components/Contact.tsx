@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 const LINKS = [
   { label: "Email",     href: "mailto:hello@pixeldew.xyz", color: "var(--mint)",    hex: "#1ddd78" },
   { label: "GitHub",    href: "https://github.com/pixeldewuniverse", color: "var(--cyan)", hex: "#0ecfdf" },
-  { label: "Instagram", href: "#", color: "var(--magenta)", hex: "#e02cb8" },
 ];
 
 export default function Contact() {
@@ -44,7 +43,7 @@ export default function Contact() {
           Punya project?
         </h2>
         <h2 className={`t-h1 shimmer reveal d2 ${vis ? "in" : ""}`} style={{ marginBottom: "32px" }}>
-          Aku siap.
+          Ayo kita bangun.
         </h2>
 
         <p className={`t-body-lg reveal d2 ${vis ? "in" : ""}`} style={{ color: "var(--text-muted)", maxWidth: "400px", marginBottom: "48px" }}>
