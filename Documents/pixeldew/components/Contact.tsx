@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 
 const LINKS = [
   { label: "Email",     href: "mailto:hello@pixeldew.xyz", color: "var(--mint)",    hex: "#1ddd78" },
-  { label: "GitHub",    href: "https://github.com/pixeldewuniverse", color: "var(--cyan)", hex: "#0ecfdf" },
 ];
 
 export default function Contact() {
