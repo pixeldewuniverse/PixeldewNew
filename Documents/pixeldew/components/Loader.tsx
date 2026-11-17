@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
+import PixelDewLogo from "./PixelDewLogo";
 
 // ── 8-bit melody generator via Web Audio API ──
 function play8BitBGM(ctx: AudioContext): () => void {
@@ -204,9 +205,7 @@ export default function Loader() {
         muted
         onEnded={onVideoEnded}
         style={{
-          maxWidth: "50%",
-          maxHeight: "50%",
-          width: "auto",
+          width: "min(88vw, 720px)",
           height: "auto",
           objectFit: "contain",
           display: started ? "block" : "none",
@@ -229,19 +228,7 @@ export default function Loader() {
           }}
         >
           {/* Logo */}
-          <svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path
-              d="M50 8 C 50 8, 78 44, 86 66 A 36 36 0 1 1 14 66 C 22 44, 50 8, 50 8 Z"
-              fill="#1ddd78"
-              style={{ filter: "drop-shadow(0 0 12px rgba(29,221,120,0.6))" }}
-            />
-            <rect x="60" y="22" width="16" height="16" fill="#080012" />
-            <rect x="76" y="10" width="9" height="9" fill="#1ddd78" />
-          </svg>
-
-          <div style={{ fontFamily: '"Press Start 2P", monospace', fontSize: "11px", color: "#1ddd78", textShadow: "0 0 16px rgba(29,221,120,0.5)", letterSpacing: "0.06em" }}>
-            PixelDew
-          </div>
+          <PixelDewLogo size={56} showText />
 
           {/* Tap prompt */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", animation: "tapPulse 2s ease-in-out infinite" }}>
