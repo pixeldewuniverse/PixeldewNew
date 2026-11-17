@@ -17,7 +17,7 @@ npm install
 
 # 2. Set up env
 cp .env.example .env.local
-# Edit .env.local → add your Anthropic API key
+# Edit .env.local → add your Groq API key
 
 # 3. Run
 npm run dev   # → http://localhost:3000
@@ -27,7 +27,8 @@ npm run dev   # → http://localhost:3000
 
 | Variable | Description |
 |---|---|
-| `ANTHROPIC_API_KEY` | Get one at [console.anthropic.com](https://console.anthropic.com) |
+| `GROQ_API_KEY` | Required. Get one at [console.groq.com](https://console.groq.com) |
+| `GROQ_MODEL` | Optional. Defaults to `openai/gpt-oss-120b` |
 
 > API key is used **server-side only** via `/api/chat` — never exposed to the browser.
 
@@ -37,7 +38,7 @@ npm run dev   # → http://localhost:3000
 npx vercel
 ```
 
-Or push to GitHub → connect at vercel.com → add `ANTHROPIC_API_KEY` in **Settings → Environment Variables**.
+Or push to GitHub → connect at vercel.com → add `GROQ_API_KEY` in **Settings → Environment Variables**.
 
 ## Project Structure
 

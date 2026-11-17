@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { groqModelOptions } from "@/lib/groq";
 
 const SYSTEM_PROMPT = `You are PixelDew's expert AI web designer and developer. Your job is to generate complete, stunning, production-ready single-file HTML websites.
 
@@ -81,8 +82,8 @@ export async function POST(req: NextRequest) {
         "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
-        max_tokens: 8000,
+        ...groqModelOptions(),
+        max_completion_tokens: 8000,
         temperature: 0.75,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },

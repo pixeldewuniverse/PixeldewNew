@@ -161,7 +161,8 @@ export default function DewbitChat() {
       if (!open) setUnread((n) => n + 1);
     } catch (e) {
       const msg = e instanceof Error ? e.message : "unknown";
-      setError(`💾 Connection failed [${msg}] — check your ANTHROPIC_API_KEY env var.`);
+      console.error("[Dewbit] chat request failed:", msg);
+      setError("💾 Dewbit lagi offline sebentar. Coba lagi beberapa saat, atau hubungi kami lewat email di bawah.");
     } finally {
       setLoading(false);
     }

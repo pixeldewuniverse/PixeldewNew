@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { groqModelOptions } from "@/lib/groq";
 
 const SYSTEM_PROMPT = `You are Dewbit 🌱 — the playful, pixel-art mascot of PixelDew Universe (pixeldew.xyz).
 
@@ -47,8 +48,8 @@ export async function POST(req: NextRequest) {
         "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
-        max_tokens: 1024,
+        ...groqModelOptions(),
+        max_completion_tokens: 1024,
         temperature: 0.9,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
