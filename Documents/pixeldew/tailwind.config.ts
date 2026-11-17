@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "pd-bg": "#08002",
+        "pd-bg": "#080012",
         "pd-bg2": "#0a0010",
-        "pd-surface": "#41226",
+        "pd-surface": "#141226",
         "pd-ink": "#F5F3FA",
         "pd-text-muted": "#A6A2B8",
         "pd-mint": "#1DDD78",

@@ -5,6 +5,12 @@ export const alt = "PixelDew — Web Creator";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+const MARK_SRC =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 5 120 120"><path d="M24 14 H68 A32 32 0 0 1 68 78 H46 V94 H24 Z M66 26 C66 26 74.4 36.4 77.6 44.4 A12 12 0 1 1 54.4 44.4 C57.6 36.4 66 26 66 26 Z" fill="#1ddd78" fill-rule="evenodd"/><rect x="28" y="100" width="14" height="14" fill="#1ddd78"/></svg>'
+  );
+
 export default async function Image() {
   return new ImageResponse(
     (
@@ -33,22 +39,14 @@ export default async function Image() {
         <div style={{ position: "absolute", top: -120, left: -120, width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(29,221,120,0.08) 0%, transparent 70%)" }} />
         <div style={{ position: "absolute", bottom: -80, right: -80, width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(14,207,223,0.06) 0%, transparent 70%)" }} />
 
-        {/* Pixel art cube — right side */}
-        <div style={{ position: "absolute", right: 80, top: "50%", transform: "translateY(-50%) rotate(12deg)", display: "flex", flexDirection: "column", gap: 0 }}>
-          {[
-            [1,1,1,1,1],
-            [1,0,0,0,1],
-            [1,0,1,0,1],
-            [1,0,0,0,1],
-            [1,1,1,1,1],
-          ].map((row, ri) => (
-            <div key={ri} style={{ display: "flex" }}>
-              {row.map((cell, ci) => (
-                <div key={ci} style={{ width: 32, height: 32, background: cell ? "rgba(29,221,120,0.7)" : "transparent", border: cell ? "1px solid rgba(29,221,120,0.3)" : "none", boxShadow: cell ? "0 0 8px rgba(29,221,120,0.3)" : "none" }} />
-              ))}
-            </div>
-          ))}
-        </div>
+        {/* PixelDew mark — right side */}
+        <img
+          src={MARK_SRC}
+          width={300}
+          height={300}
+          alt=""
+          style={{ position: "absolute", right: 90, top: 165 }}
+        />
 
         {/* Content */}
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px", flex: 1, zIndex: 1, maxWidth: 720 }}>
@@ -61,7 +59,7 @@ export default async function Image() {
           </div>
 
           {/* Title */}
-          <div style={{ fontSize: 88, fontWeight: 800, color: "#1ddd78", lineHeight: 0.9, marginBottom: 24, letterSpacing: "-0.03em" }}>
+          <div style={{ fontSize: 88, fontWeight: 800, color: "#f5f3fa", lineHeight: 0.9, marginBottom: 24, letterSpacing: "-0.03em" }}>
             PixelDew
           </div>
 

@@ -7,12 +7,12 @@
 /* ── Variables ── */
 :root {
   /* Backgrounds — per brand guideline O7 (85/10/4/1) */
-  --bg:        #08002;   /* 85% - bg */
+  --bg:        #080012;  /* 85% - bg */
   --bg2:       #0a0010;
   --bg-glass:  rgba(8, 0, 18, 0.85);
 
   /* Surfaces */
-  --surface:   #41226;   /* 10% - surface-raised */
+  --surface:   #141226;  /* surface-raised */
 
   /* Text — ink */
   --ink:       #F5F3FA;  /* 4% - white text */
